@@ -1,0 +1,56 @@
+.body {
+  backgroud-color: grey;
+}
+/* containers */
+#con_fluid_1 {
+  background-color: brown;
+  height: 400px;
+  max-width: 1500px;
+}
+#con_fluid_2 {
+  background-color: purple;
+  height: 500px;
+  max-width: 1500px;
+}
+#centerDiv1 {
+  margin: auto;
+  width: 50%;
+  border: 1px solid green;
+  padding: 10px;
+  text-align: center;
+  padding: 15px;
+}
+#undelineDiv {
+  width: 60%;
+  height: 2px;
+  background-color: greenyellow;
+  margin: auto;
+  width: 30%;
+}
+#elevenone {
+  width: 11.1%;
+  /* padding-left: 0px;
+  padding-right: 0px;
+  margin-right: 0px;
+  margin-left: 0px; */
+}
+#imgRow1 {
+  width: 150px;
+  height: 200px;
+}
+
+/* slider */
+#sliderimg {
+  width: 100%;
+  height: 400px;
+}
+#sliderText {
+  color: black;
+  opacity: 1;
+}
+.carousel-inner {
+  display: block;
+  min-width: 100%;
+  width: 100%;
+  max-width: 100%;
+}
