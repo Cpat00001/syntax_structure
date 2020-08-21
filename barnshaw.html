@@ -16,6 +16,13 @@
       integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
       crossorigin="anonymous"
     />
+     <!-- FONT AWSOME -->
+     <script
+     src="https://kit.fontawesome.com/11d4f90b7c.js"
+     crossorigin="anonymous"
+   ></script>
+
+
     <title>Barnshaw</title>
   </head>
 
@@ -323,23 +330,10 @@
       </div>
     </div>
     <!-- fourth row -->
-    <div class="container-fluid">
+    <div class="container-fluid" style="margin-bottom:50px;">
       <div id="centerDiv3">
         <div class="row">
-          <div
-            class="col-sm"
-            style="
-              border: 2px solid red;
-              min-height: 300px;
-              height: auto;
-              background-image: linear-gradient(
-                rgb(74, 55, 245),
-                rgb(106, 89, 197)
-              );
-              text-align: center;
-              color: white;
-            "
-          >
+          <div class="col-sm" id="centerDiv_left">
             <div style="width: 100%; margin-top: 10%;">
               <h1>Our mission</h1>
             </div>
@@ -358,29 +352,199 @@
               every time we work together."
             </p>
           </div>
-          <div class="col-sm" style="border: 2px solid orange;">
+          <div class="col-sm">
             <!-- <p>Right side</p> -->
               <div class="row" id="row4_1">
                 <div class="col" style="background-color: greenyellow;">
-                  Right LEFT
+                  <div id="row4_icon">
+                    <i class="fas fa-cogs fa-5x"></i>
+                    <h3>All services</h3>
+                  </div>
                 </div>
-                <div class="col" style="background-color: rgb(63, 65, 62);">
-                  Right RIGHT
+                <div class="col" style="background-color: rgb(166, 168, 165);">
+                  <div id="row4_icon">
+                    <i class="fas fa-download fa-5x"></i>
+                    <h3>Downloads</h3>
+                  </div>
                 </div>
               </div>
                 <div class="row" id="row4_2">
-                  <div class="col" style="background-color: rgb(80, 41, 187);">
-                    Right LEFT
+                  <div class="col" style="background-color: rgb(173, 155, 223);">
+                    <div id="row4_icon">
+                      <i class="fas fa-calculator fa-5x"></i>
+                      <h3>Capacity Calc</h3>
+                    </div>
                   </div>
-                  <div class="col" style="background-color: rgb(158, 42, 119);">
-                    Right RIGHT
+                  <div class="col" style="background-color: rgb(197, 116, 170);">
+                    <div id="row4_icon">
+                      <i class="far fa-comment-dots fa-5x"></i>
+                      <h3>Contact us</h3>
+                    </div>
                   </div>
                 </div>
             </div>
           </div>
         </div>
       </div>
+      <!-- fifth row -->
+          <!-- SLIDER ################################################### -->
+    <div
+    id="carouselExampleIndicators"
+    class="carousel slide"
+    data-ride="carousel"
+    id="con_fluid_2"
+  >
+    <ol class="carousel-indicators">
+      <li
+        data-target="#carouselExampleIndicators"
+        data-slide-to="0"
+        class="active"
+      ></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <!-- <li data-target="#carouselExampleIndicators" data-slide-to="2"></li> -->
+    </ol>
+    <div class="carousel-inner" id="controw5">
+      <div class="carousel-item active" data-interval="20000">
+        <!-- carsoulse caption -->
+        <div class="carousel-caption d-none d-md-block">
+          <h2 id="sliderTextRow5">
+            WIELUN RING ROAD BUILT WITH INNOVATIVE CURVED TUBES
+          </h2>
+        </div>
+        <!-- end carousle caption -->
+        <img
+          src="./style/sl1.jpg"
+          class="d-block w-100"
+          alt="..."
+          id="sliderimg"
+        />
+      </div>
+      <div class="carousel-item">
+        <div class="carousel-caption d-none d-md-block">
+          <h2 id="sliderText" style="color: yellow;">
+            Extremly good performance and customer service
+          </h2>
+        </div>
+        <img
+          src="./style/sl2.jpg"
+          class="d-block w-100"
+          alt="..."
+          id="sliderimg"
+        />
+      </div>
     </div>
+    <a
+      class="carousel-control-prev"
+      href="#carouselExampleIndicators"
+      role="button"
+      data-slide="prev"
+    >
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a
+      class="carousel-control-next"
+      href="#carouselExampleIndicators"
+      role="button"
+      data-slide="next"
+    >
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+  <!-- SLIDER END -->
+  <!-- sixth row -->
+    <div class="container-fluid">
+        <div id="centerDiv1">
+          <div class="row">
+            <div style="width: 100%;">
+              <h1>New Stories</h1>
+            </div>
+            <div id="undelineDiv"></div>
+          </div>
+        </div>
+        <!-- new stories 3 columns -->
+        <div class="container" id="centerDivNews">
+          <div class="row">
+            <div class="col-sm">
+                <div class="col-sm" id="newsDiv1"> 
+                </div>
+                <div id="newsDate"><p id="newsDateText">03 JUN</p></div>
+                <div class="col-sm">
+                  <h3 id="newsHeader">2100 tonnes of Barnshaws Polska steel plate supports oil storage tank project</h3>
+                </div>
+                <p>Barnshaws Polska has supplied over 2100 tonnes of 
+                  rolled steel plates to support the construction of a 
+                  crude oil storage tank in Nelahozeves, Czech Republic. 
+                  <a href="https://www.barnshaws.com/news/2100-tonnes-of-barnshaws-polska-steel-plate-supports-oil-storage-tank-proje">Read More...</a> 
+                </p>
+                  
+            </div>
+            <div class="col-sm">
+                <div class="col-sm">
+                  <div class="col-sm" id="newsDiv2"></div>
+                  <div id="newsDate"><p id="newsDateText">22 APR</p></div>
+                </div>
+                <div class="col-sm">
+                  <h3 id="newsHeader">Barnshaws continues metal bending service for essential sectors</h3>
+                </div>
+                <p>Barnshaws Section Benders, the world’s most capable metal bending company, 
+                  is continuing to support essential projects during the COVID-19 outbreak. 
+                  <a href="https://www.barnshaws.com/news/barnshaws-continues-metal-bending-service-for-essential-sectors">Read More...</a>
+                </p>
+            </div>
+            <div class="col-sm">
+                <div class="col-sm">
+                  <div class="col-sm" id="newsDiv3"></div>
+                  <div id="newsDate"><p id="newsDateText">03 DEC</p></div>
+                </div>
+                <div class="col-sm">
+                  <h3 id="newsHeader">Barnshaws slides in to provide curved metal for Coventry’s new waterpark</h3>
+                </div>
+                <p>Coventry’s new water park, The Wave, is contained in a curved oval
+                   shaped structure with blue shingles, a reference to flowing water, on the outside.  
+                   <a href="https://www.barnshaws.com/news/barnshaws-slides-in-to-provide-curved-metal-for-coventrys-new-waterpark">Read More...</a>  
+                </p>
+            </div>
+          </div>
+        </div>
+    </div>
+  <!-- sevent row view more -->
+  <div class="container-fluid">
+    <div class="container" id="viewallnews">
+      <a href="https://www.barnshaws.com/news" class="dblueButton">View All News</a>
+    </div>
+  </div>
+</div>
+<!-- eight mailing list -->
+<div class="container-fluid" id="conFluid8">
+  <div id="centerDiv1">
+    <div class="row">
+      <div style="width: 100%;">
+        <h1 style="color:#fff;margin-top:30px;">JOIN OUR MAILING LIST</h1>
+      </div>
+      <div id="undelineDivMail"></div>
+    </div>
+    <p style="color:#fff;margin-top:50px;">Please enter your email address below to receive news and updates from Barnshaws</p>
+    <!-- form -->
+  <div>
+    <form>
+      <div class="form-group row">
+        <!-- <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg">Email</label> -->
+        <div class="col-sm-12">
+          <input type="text" class="form-control form-control-lg" id="colFormLabelLg"
+            style="background-color:rgba(0,0,0,0) !important;"
+            placeholder="Your email address">
+        </div>
+      </div>
+    <button type="submit" class="btn" style="width:30%;border:1px solid white;color:white;">Join</button>
+    </form>
+  </div>
+  <!-- end of form -->
+  </div>
+  
+  
+</div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

@@ -45,7 +45,7 @@
 #centerDiv1 {
   margin: auto;
   width: 50%;
-  border: 1px solid green;
+  /* border: 1px solid green; */
   padding: 10px;
   text-align: center;
   padding: 15px;
@@ -88,6 +88,13 @@
   margin-left: auto;
   margin-right: auto;
 }
+#centerDiv_left {
+  min-height: 300px;
+  height: auto;
+  background-image: linear-gradient(rgb(74, 55, 245), rgb(106, 89, 197));
+  text-align: center;
+  color: white;
+}
 #undelineDiv2 {
   height: 2px;
   background-color: #fff;
@@ -110,3 +117,97 @@
 #row4_2 {
   min-height: 250px;
 }
+#row4_icon {
+  margin: auto;
+  width: 50%;
+  margin-top: 25%;
+}
+/* fifth row -SLIDER */
+#controw5 {
+  position: relative;
+}
+#sliderTextRow5 {
+  position: absolute;
+  color: red;
+  opacity: 1;
+  font-size: 35px;
+  font-weight: bold;
+  top: 10px;
+}
+#con_fluid_2 {
+  height: 540px;
+  max-width: 1500px;
+  margin-bottom: 50px;
+}
+/* sixth row - new stories */
+#centerDivNews {
+  margin: auto;
+  width: 80%;
+  border: 1px solid green;
+  padding: 10px;
+  text-align: center;
+  padding: 15px;
+  margin-bottom: 5%;
+  margin-top: 5%;
+}
+#newsDiv1{
+  /* background-image:url('./style/sl1.jpg'); */
+  background-color:black;
+  height:250px;
+  position:relative;
+}
+#newsDiv2{
+  /* background-image:url('./style/sl2.jpg'); */
+  background-color:brown;
+  height:250px;
+}
+#newsDiv3{
+  /* background-image:url('./style/sl3.jpg'); */
+  background-color:green;
+  height:250px;
+}
+#newsDate{
+  background-color:hotpink;
+  position:absolute;
+  top:0px;
+  width:25%;
+  min-height:30%"
+}
+#newsDateText{
+  color:white;
+  font-size:25px;
+  font-weight:bold;
+}
+#newsHeader{
+  color: #4CBAEE;
+  font-family: "proxima_nova_rgregular";
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+/* seventh line - see all views */
+#viewallnews{
+  color: #2E3070;
+  border: 2px solid #2E3070;
+  margin-bottom: 80px;
+  width:30%;
+  padding:15px;
+  text-align:center;
+}
+/* eight mailing list */
+#conFluid8{
+  background-image:url('mail.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height:300px;
+  height:auto;
+}
+#undelineDivMail{
+  background-color:rgb(50, 50, 212);
+  height: 2px;
+  margin: auto;
+  width: 30%;
+}
+
+
+
