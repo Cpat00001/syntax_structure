@@ -1,6 +1,12 @@
 .body {
   backgroud-color: grey;
 }
+a:link{
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
 /* containers */
 #con_fluid_1 {
   background-color: brown;
@@ -27,8 +33,9 @@
 /* row2 ######################## */
 #con_fluid_2 {
   background-color: #fff;
-  height: 400px;
+  height: auto;
   max-width: 1500px;
+  margin-bottom: 50px;
 }
 #con_fluid_3 {
   max-width: 1500px;
@@ -134,11 +141,6 @@
   font-weight: bold;
   top: 10px;
 }
-#con_fluid_2 {
-  height: 540px;
-  max-width: 1500px;
-  margin-bottom: 50px;
-}
 /* sixth row - new stories */
 #centerDivNews {
   margin: auto;
@@ -201,12 +203,54 @@
   background-size: cover;
   min-height:300px;
   height:auto;
+  max-width: 1500px;
 }
 #undelineDivMail{
   background-color:rgb(50, 50, 212);
   height: 2px;
   margin: auto;
   width: 30%;
+}
+/* ninegth row -> Twitter */
+#conFluid9{
+  background-image:url('twitter.png');
+  background-repeat:no-repeat;
+  background-size:cover;
+  min-height:300px;
+  height:auto;
+  max-width: 1500px;
+}
+#underlineDivTweet{
+  height: 2px;
+  background-color: rgb(102, 30, 218);
+  margin: auto;
+  width: 30%;
+}
+#linkedTweet{
+  color:white;
+}
+#twitterimg{
+  border-radius: 10% 10% 10% 10%;
+  width:60%;
+  height:100px;
+  margin:auto;
+}
+#twitterColumn{
+  color:white;
+  text-align: center;
+  display: block;
+}
+/*  tenth row - logos*/
+#tenthrowLogo{
+  margin-top:50px;
+  margin-bottom:50px;
+}
+/* eleventh row - socialMedia */
+#elevenSocial{
+  background-image: linear-gradient(rgb(74, 55, 245), rgb(106, 89, 197));
+}
+#iconColor{
+  color:rgb(214, 207, 207);
 }
 
 
