@@ -7,6 +7,9 @@ a:link{
 a:hover {
   text-decoration: underline;
 }
+#flags{
+  margin:1px;
+}
 /* containers */
 #con_fluid_1 {
   background-color: brown;
@@ -156,7 +159,7 @@ a:hover {
   /* background-image:url('./style/sl1.jpg'); */
   background-color:black;
   height:250px;
-  position:relative;
+  /* position:relative; */
 }
 #newsDiv2{
   /* background-image:url('./style/sl2.jpg'); */
