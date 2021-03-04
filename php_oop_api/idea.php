@@ -7,8 +7,16 @@ class Idea{
     private $title;
     private $note;
 
+    //connect with DB by construct
     public function __construct($conn){
         $this->conn = $conn;
+    }
+    // read record from table
+    public function read(){
+        $sql = "SELECT * FROM ideas";
+        $sth = $this->conn->prepare($sql);
+        $sth->execute();
+        return $sth;
     }
 
     // insert record to table
@@ -21,10 +29,9 @@ class Idea{
         $this->note = htmlspecialchars($this->note);
 
         //bind parameter to pass to SQL query
-        $sth->bindParam(':title',$this->title);
-        $sth->bindParam(':note',$this->note);
+        $sth->bindParam(':title',$this->title, PDO::PARAM_STR);
+        $sth->bindParam(':note',$this->note, PDO::PARAM_STR);
         $sth->execute();
-
     }
 }
 
