@@ -1,5 +1,5 @@
 <?php
-
+//optional params in function
 function example($last_name,$first_name = NULL){
     var_dump($first_name);
 	//$first_name = is_null($first_name)? " " : $first_name ;
@@ -61,6 +61,5 @@ function fourth($req, $opt = "" ){
 $a = "FirstName";
 $b = "LastName";
 echo fourth($b,$a);
-
 
 ?>
