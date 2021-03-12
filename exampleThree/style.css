@@ -1,0 +1,12 @@
+/*
+Theme Name: ExampleThree
+Theme URI: https://wordpress.org/themes/exampleThree
+Author: Pat
+*/
+
+body {
+  background-color: pink;
+}
+.main_text {
+  color: brown;
+}
