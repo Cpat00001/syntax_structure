@@ -1,4 +1,4 @@
-<h1>Footer</h1>
+<h1>Footer Bla Blaa</h1>
 
 
 <?php wp_footer(); ?>

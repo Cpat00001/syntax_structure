@@ -12,8 +12,4 @@ function add_javascript(){
 add_action('wp_enqueue_scripts','add_javascript');
 
 
-
-
-
-
 ?>
