@@ -5,8 +5,103 @@ Author: Pat
 */
 
 body {
-  background-color: pink;
+  background-color: rgb(128, 126, 126);
 }
 .main_text {
   color: brown;
+}
+/* .container {
+  padding-right: 0px;
+  padding-left: 0px;
+} */
+/* navbar */
+.navbar {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  padding-right: 0px;
+  padding-left: 0px;
+}
+ul,
+li {
+  list-style: none;
+  margin-right: 15px;
+  /* display: inline; */
+}
+a {
+  color: white;
+  font-size: 15px;
+  font-weight: 900;
+  font-variant: small-caps;
+}
+a:hover {
+  color: red;
+  text-decoration: none;
+  font-size: 17px;
+}
+#header {
+  background-color: rgb(158, 155, 155);
+  box-shadow: 0px 5px 5px rgb(219, 216, 216);
+}
+#logo {
+  width: auto;
+  height: 70px;
+  margin-left: 15px;
+}
+.navbar-toggler {
+  background-color: rgb(219, 28, 28);
+  border: 1px solid rgb(158, 155, 155);
+  font-size: 12px;
+  color: white;
+  font-variant: small-caps;
+  margin-left: 15px;
+  /* text-align: center; */
+}
+.navbar-toggler-icon {
+  width: 3.5em;
+}
+/* main content */
+.first_row {
+  margin-top: 20px;
+  min-height: 300px;
+}
+.tlo {
+  background-color: indigo;
+  min-height: 300px;
+  position: relative;
+}
+.tlo_in {
+  background-color: lightcoral;
+  min-height: 50px;
+  position: absolute;
+  top: 80px;
+  right: -50px;
+  padding: 10px;
+}
+.center {
+}
+/* footer */
+#f-left {
+  min-height: 200px;
+  background-color: darkorchid;
+  /* padding: 15px; */
+  text-align: center;
+  display: flex;
+}
+#f-right {
+  min-height: 200px;
+  background-color: rgb(95, 86, 172);
+  display: flex;
+}
+#contact_bottom {
+  align-self: flex-end;
+}
+/* media */
+@media only screen and (min-width: 900px) {
+  ul,
+  li {
+    list-style: none;
+    display: inline;
+  }
 }

@@ -11,5 +11,14 @@ function add_javascript(){
 }
 add_action('wp_enqueue_scripts','add_javascript');
 
+//Register/Add menu
+if( !function_exists('register_main_nav')){
+    function register_main_nav(){
+        register_nav_menus(array(
+            'primary_menu' => __('Primary Menu', 'text_domain')
+        ));
+    }
+    add_action('init','register_main_nav');
+}
 
 ?>
