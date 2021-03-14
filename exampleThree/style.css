@@ -62,9 +62,16 @@ a:hover {
   width: 3.5em;
 }
 /* main content */
-.first_row {
-  margin-top: 20px;
+.front_first_row {
+  margin-top: 0.5rem;
   min-height: 300px;
+}
+.front_second_row {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  min-height: 500px;
+  background-color: coral;
+  padding-bottom:1.5rem;
 }
 .tlo {
   background-color: indigo;
@@ -79,7 +86,9 @@ a:hover {
   right: -50px;
   padding: 10px;
 }
-.center {
+.front_card{
+  background-color:pink;
+  box-shadow: 10px 10px 10px black;
 }
 /* footer */
 #f-left {

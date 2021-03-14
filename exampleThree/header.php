@@ -18,7 +18,7 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
         <a class="navbar-brand" href="/">
-        <img src="<?php echo get_stylesheet_directory_uri(); ?>./media/log1.png" id='logo'>
+        <img src="<?php echo get_stylesheet_directory_uri(); ?>./media/log1.png" id='logo' class="img-fluid">
         </a>
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <?php wp_nav_menu(array('theme-location' => 'header-menu')); ?>
