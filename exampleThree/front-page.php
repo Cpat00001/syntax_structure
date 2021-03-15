@@ -26,11 +26,11 @@ if ( have_posts() ) {
                </div> -->
                <div class="card front_card">
                <?php if(has_post_thumbnail()){?>
-                    <img src="<?php echo get_the_post_thumbnail_url(); ?>" class="card-img-top" alt="post_image_good_for_SEO_description">
+                    <img src="<?php echo the_post_thumbnail_url('custom-post-image-size'); ?>" class="img-fluid" alt="post_image_good_for_SEO_description">
                 <?php } ?>
                     <div class="card-body">
-                        <h5 class="card-title"><?php the_title(); ?></h5>
-                        <p class="card-text"><?php the_excerpt(); ?></p>
+                        <a href="<?php the_permalink();?>" class="post_link"><h5 class="card-title"><?php the_title(); ?></h5></a>
+                        <p class="card-text"><?php echo get_excerpt(); ?></p>
                         <a href="<?php echo the_permalink(); ?>" class="btn btn-primary">Read more..</a>
                     </div>
                 </div>

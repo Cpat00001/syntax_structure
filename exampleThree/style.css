@@ -77,6 +77,11 @@ a:hover {
   background-color: indigo;
   min-height: 300px;
   position: relative;
+  background-image:url("media/s1.jpg");
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  background-position: center;
+  background-size: cover;
 }
 .tlo_in {
   background-color: lightcoral;
@@ -89,6 +94,15 @@ a:hover {
 .front_card{
   background-color:pink;
   box-shadow: 10px 10px 10px black;
+}
+a.post_link{
+  color:black;
+}
+a.post_link:hover{
+  color:white;
+}
+.card-body{
+  width:100%;
 }
 /* footer */
 #f-left {

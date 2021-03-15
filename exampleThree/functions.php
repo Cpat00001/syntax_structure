@@ -17,6 +17,8 @@ function wpdocs_setup_theme() {
     set_post_thumbnail_size( 150, 150 );
 }
 add_action( 'after_setup_theme', 'wpdocs_setup_theme' );
+//set thumbnail size
+add_image_size('custom-post-image-size','290','180',true);
 //add post-thumbnails / images
 //add_theme_support('post-thumbnails',array('post'));
 
@@ -30,6 +32,18 @@ if( !function_exists('register_main_nav')){
     add_action('init','register_main_nav');
 }
 // set the amount of words in excerpt
-add_filter('excerpt_length',function($length){return 20;});
+// add_filter('excerpt_length',function($length){return 20;});
+
+//custom function to set amount of characters in excerpt of post
+function get_excerpt(){
+    $excerpt = get_the_content();
+    $excerpt = preg_replace(" ([.*?])",'',$excerpt);
+    $excerpt = strip_shortcodes($excerpt);
+    $excerpt = strip_tags($excerpt);
+    $excerpt = substr($excerpt, 0, 60);
+    $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
+    $excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
+    return $excerpt;
+    }
 
 ?>

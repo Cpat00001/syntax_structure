@@ -17,7 +17,7 @@
         <span class="navbar-toggler-icon"><p>Menu</p></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-        <a class="navbar-brand" href="/">
+        <a class="navbar-brand" href="https://localhost/exampleThree/">
         <img src="<?php echo get_stylesheet_directory_uri(); ?>./media/log1.png" id='logo' class="img-fluid">
         </a>
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
