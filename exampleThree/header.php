@@ -29,6 +29,8 @@
         </form> -->
     </div>
     </nav>
+    <?php  include_once 'ajax_call.js';?>
+
 
     
   
