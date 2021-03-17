@@ -67,7 +67,7 @@ wp_reset_query();
         </div>
         <div class="col-sm-12 col-md-6" style="background-color:rgb(186, 60, 176);">
             <h5>Check opening hours</h5>
-            <div id="showHours">Open: ...</div>
+            <div id="showHours"></div>
         </div>
     </div>
  </div>

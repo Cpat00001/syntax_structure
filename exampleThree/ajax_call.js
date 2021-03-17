@@ -6,7 +6,7 @@ function showOpenHours(str) {
     document.getElementById("showHours").innerHTML = "Empty input";
     return;
   }
-  var xhttp = new XMLHttpRequest();
+  xhttp = new XMLHttpRequest();
   
   xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -16,8 +16,9 @@ function showOpenHours(str) {
     console.log('fired')
   };
 // xhttp.open("GET", "openhours.php?q="+str, true);
-// dzialajaca linia - przynosi caly html xhttp.open("GET", "https://localhost/exampleThree/openhours/?q="+str, true)
-xhttp.open("GET", "https://localhost/exampleThree/openhours/?q="+str, true)
+//open page page-openhours.php and blank page z cms openhours
+// true = async call ajax 
+xhttp.open("GET", "openhours/?q="+str, true);
 xhttp.send();
 }
 </script>

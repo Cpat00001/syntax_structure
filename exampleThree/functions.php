@@ -8,9 +8,6 @@ add_action('wp_enqueue_scripts','themeslug_enqueue_style');
 function add_javascript(){
     wp_register_script('custom_javascript',get_template_directory_uri() . './js/dynamicfront.js','jquery',1,true);
     wp_enqueue_script('custom_javascript');
-    // ajax call
-    // wp_register_script('ajax_call',get_template_directory_uri() . './js/ajax_call.js','jquery',1,true);
-    // wp_enqueue_script('ajax_call');
 }
 add_action('wp_enqueue_scripts','add_javascript');
 //set thumbnail image size
@@ -49,6 +46,7 @@ function get_excerpt(){
     return $excerpt;
     }
 //include file wiht ajax call
-include_once('openhours.php');
+// include_once('openhours.php');
+include_once('page-openhours.php');
 
 ?>
