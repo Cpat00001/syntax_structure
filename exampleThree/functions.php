@@ -48,5 +48,30 @@ function get_excerpt(){
 //include file wiht ajax call
 // include_once('openhours.php');
 include_once('page-openhours.php');
+//registration form
+add_shortcode('reg_form','registration_form');
+function registration_form(){
+    $reg_form .= "<form action='' method='POST' id='register_event'>";
+    $reg_form .= "<div class='cent'>";
+    $reg_form .= "<h3>Registration form: </h3>";
+    $reg_form .= "<label for='username'>Username</label><br>";
+    $reg_form .= "<input type='text' name='username' id='username'><br><br>";
+    $reg_form .= "<label for='username'>Password</label><br>";
+    $reg_form .= "<input type='text' name='pass' id='pass'><br><br>";
+    $reg_form .= "<label for='email'>Email</label><br>";
+    $reg_form .= "<input type='text' name='email' id='email'><br><br>";
+    $reg_form .= "<?php wp_nonce_field('name_of_my_action','name_of_nonce_field', true,true); ?>";
+    $reg_form .= "<input type='Submit'>";
+    $reg_form .= "</div>";
+    $reg_form .="</form>";
+    return $reg_form;
+}
+// add JS file with AJAX for registration form
+function register_users_input_registration_field(){
+    wp_register_script('registration_script_ajax', get_template_directory_uri() . 'ajax-registration.js',array('jquerry'),null,false);
+    wp_enqueue_script('registration_script_ajax');
+}
+add_action('wp_enqueue_scripts','register_users_input_registration_field');
+
 
 ?>

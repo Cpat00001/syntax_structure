@@ -29,7 +29,7 @@
         </form> -->
     </div>
     </nav>
-    <?php  include_once 'ajax_call.js';?>
+    <?php  include_once 'js/ajax_call.js';?>
 
 
     

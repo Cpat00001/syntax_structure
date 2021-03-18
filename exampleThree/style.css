@@ -71,13 +71,13 @@ a:hover {
   margin-bottom: 0.5rem;
   min-height: 500px;
   background-color: coral;
-  padding-bottom:1.5rem;
+  padding-bottom: 1.5rem;
 }
 .tlo {
   background-color: indigo;
   min-height: 300px;
   position: relative;
-  background-image:url("media/s1.jpg");
+  background-image: url('media/s1.jpg');
   background-repeat: no-repeat;
   /* background-attachment: fixed; */
   background-position: center;
@@ -91,18 +91,18 @@ a:hover {
   right: -50px;
   padding: 10px;
 }
-.front_card{
-  background-color:pink;
+.front_card {
+  background-color: pink;
   box-shadow: 10px 10px 10px black;
 }
-a.post_link{
-  color:black;
+a.post_link {
+  color: black;
 }
-a.post_link:hover{
-  color:white;
+a.post_link:hover {
+  color: white;
 }
-.card-body{
-  width:100%;
+.card-body {
+  width: 100%;
 }
 /* footer */
 #f-left {
@@ -119,6 +119,19 @@ a.post_link:hover{
 }
 #contact_bottom {
   align-self: flex-end;
+}
+/* registration form */
+.cent {
+  height: auto;
+  margin: 0 auto;
+  /* border: 2px solid blueviolet; */
+  padding: 10px;
+  background-color: pink;
+  padding: 10px;
+  max-width: 400px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 /* media */
 @media only screen and (min-width: 900px) {
