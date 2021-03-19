@@ -8,6 +8,12 @@ add_action('wp_enqueue_scripts','themeslug_enqueue_style');
 function add_javascript(){
     wp_register_script('custom_javascript',get_template_directory_uri() . './js/dynamicfront.js','jquery',1,true);
     wp_enqueue_script('custom_javascript');
+
+    wp_register_script('registration_script_ajax', get_template_directory_uri() . './js/ajax-registration.js',array('jquery'),null,false);
+    wp_enqueue_script('registration_script_ajax');
+    //in order to use ajax in front 
+    wp_localize_script( 'registration_script_ajax', 'frontend_ajax_object',
+            array( 'ajax_url' => admin_url( 'admin-ajax.php' ) ) );
 }
 add_action('wp_enqueue_scripts','add_javascript');
 //set thumbnail image size
@@ -48,10 +54,11 @@ function get_excerpt(){
 //include file wiht ajax call
 // include_once('openhours.php');
 include_once('page-openhours.php');
+
 //registration form
 add_shortcode('reg_form','registration_form');
 function registration_form(){
-    $reg_form .= "<form action='' method='POST' id='register_event'>";
+    $reg_form .= "<form action='https://localhost/exampleThree/registrationData.php' method='POST' id='register_event'>";
     $reg_form .= "<div class='cent'>";
     $reg_form .= "<h3>Registration form: </h3>";
     $reg_form .= "<label for='username'>Username</label><br>";
@@ -62,16 +69,14 @@ function registration_form(){
     $reg_form .= "<input type='text' name='email' id='email'><br><br>";
     $reg_form .= "<?php wp_nonce_field('name_of_my_action','name_of_nonce_field', true,true); ?>";
     $reg_form .= "<input type='Submit'>";
+    $reg_form .= "<div class='spinner'>Please wait,procesing your request...</div>";
+    $reg_form .= "<div class='msg1'></div>";
     $reg_form .= "</div>";
     $reg_form .="</form>";
     return $reg_form;
 }
-// add JS file with AJAX for registration form
-function register_users_input_registration_field(){
-    wp_register_script('registration_script_ajax', get_template_directory_uri() . 'ajax-registration.js',array('jquerry'),null,false);
-    wp_enqueue_script('registration_script_ajax');
-}
-add_action('wp_enqueue_scripts','register_users_input_registration_field');
+
+
 
 
 ?>
