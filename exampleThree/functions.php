@@ -58,23 +58,6 @@ include_once('page-openhours.php');
 //registration form
 add_shortcode('reg_form','registration_form');
 // function registration_form(){
-//     $reg_form .= "<form action='https://localhost/exampleThree/registrationData.php' method='POST' id='register_event'>";
-//     $reg_form .= "<div class='cent'>";
-//     $reg_form .= "<h3>Registration form: </h3>";
-//     $reg_form .= "<label for='username'>Username</label><br>";
-//     $reg_form .= "<input type='text' name='username' id='username'><br><br>";
-//     $reg_form .= "<label for='username'>Password</label><br>";
-//     $reg_form .= "<input type='text' name='pass' id='pass'><br><br>";
-//     $reg_form .= "<label for='email'>Email</label><br>";
-//     $reg_form .= "<input type='text' name='email' id='email'><br><br>";
-    //  $reg_form .= "<input type='Submit' value='Register'>";
-    //  $reg_form .= "<div class='spinner'>Please wait,procesing your request...</div>";
-    //  $reg_form .= "<div class='msg1'></div>";
-    //  $reg_form .= "</div>";
-    //  $reg_form .="</form>";
-    //  return $reg_form;
- // }
-
 //  WERSJA Z ONCLIK NA SUBMIT BUTTON
 function registration_form(){
     $reg_form .= "<form action=''>";
@@ -96,5 +79,7 @@ function registration_form(){
 }
 // add PHP file processing AJAX call from Registration form
 include 'registrationData.php';
+// include file with Login_Form => login_form.php
+include 'login_form.php';
 
 ?>

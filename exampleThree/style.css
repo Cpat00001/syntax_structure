@@ -127,11 +127,32 @@ a.post_link:hover {
   /* border: 2px solid blueviolet; */
   padding: 10px;
   background-color: pink;
-  padding: 10px;
   max-width: 400px;
   margin-top: 1rem;
   margin-bottom: 1rem;
   text-align: center;
+}
+/* login form styling*/
+.login_form {
+  background-color: powderblue;
+  height: auto;
+  margin: 0 auto;
+  max-width: 400px;
+  padding: 10px;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+#login_image {
+  background-color: rgb(128, 126, 126);
+  min-height: 200px;
+  background-image: url('./media/login_img.jpg');
+  background-position: 50% 65%;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background-repeat: no-repeat;
+  /* background-position: center; */
+  background-size: cover;
 }
 /* media */
 @media only screen and (min-width: 900px) {
