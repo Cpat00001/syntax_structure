@@ -143,6 +143,25 @@ a.post_link:hover {
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+/* wordpress Login form */
+#loginform_custom {
+  background-color: crimson;
+  padding-top: 50px;
+  min-height: 300px;
+  max-width: 400px;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: white;
+  font-weight: 900;
+}
+#wp-submit {
+  background-color: darkgreen;
+  color: white;
+  font-weight: 900;
+  min-width: 80%;
+  min-height: 50px;
+}
 #login_image {
   background-color: rgb(128, 126, 126);
   min-height: 200px;
@@ -153,6 +172,10 @@ a.post_link:hover {
   background-repeat: no-repeat;
   /* background-position: center; */
   background-size: cover;
+}
+#login_fail {
+  color: white;
+  text-align: center;
 }
 /* media */
 @media only screen and (min-width: 900px) {
