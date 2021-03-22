@@ -82,7 +82,7 @@ include 'registrationData.php';
 // include file with Login_Form => login_form.php
 //include 'page-login.php';
 
-//@@@@@@@ if Login failure redirect to custom Login Page np Wordpress wp-login
+//@@@@@@@ if Login failure redirect to custom Login Page np Wordpress wp-login @@@@@@@@@@@@@@@@@
 /**
  * Function Name: front_end_login_fail.
  * Description: This redirects the failed login to the custom login page instead of default login page with a modified url
@@ -96,8 +96,7 @@ $referrer = $_SERVER['HTTP_REFERER'];
 if( !empty( $referrer ) && !strstr( $referrer,'wp-login' ) && !strstr( $referrer,'wp-admin' ) ) {
     wp_redirect( get_permalink( 51 ) . "?login=failed" ); 
     exit;
-}
-
+ }
 }
 
 /**
@@ -116,11 +115,20 @@ if( !empty( $referrer ) && !strstr( $referrer,'wp-login' ) && !strstr( $referrer
         wp_redirect( get_permalink( 51 ) . "?login=empty" );
         exit;
     }
+  }
 }
-
-}
-
 // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+//if user NOT loggined then Redirect to Login Page => do_action('check_login') on protected URL
+add_action('check_login','redirect_to_login_page');
 
+function redirect_to_login_page(){
+    if((!is_user_logged_in())){
+        echo "you will be redirected to LOGIN page";
+        wp_safe_redirect('https://localhost/exampleThree/login/',302);
+        exit();
+    }else{
+        echo "Welcome DYNAMIC USERNAME";
+    }
+}
 
 ?>
