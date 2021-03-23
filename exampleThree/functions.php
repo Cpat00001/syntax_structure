@@ -32,7 +32,8 @@ add_image_size('custom-post-image-size','290','180',true);
 if( !function_exists('register_main_nav')){
     function register_main_nav(){
         register_nav_menus(array(
-            'primary_menu' => __('Primary Menu', 'text_domain')
+            'primary_menu' => __('Primary Menu', 'text_domain'),
+            'secondary_menu' => __('Secondary Menu', 'text_domain')
         ));
     }
     add_action('init','register_main_nav');
@@ -127,7 +128,7 @@ function redirect_to_login_page(){
         wp_safe_redirect('https://localhost/exampleThree/login/',302);
         exit();
     }else{
-        echo "Welcome DYNAMIC USERNAME";
+    //    echo "ZALOGOWANY";
     }
 }
 

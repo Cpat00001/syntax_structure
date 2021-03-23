@@ -21,14 +21,15 @@
         <img src="<?php echo get_stylesheet_directory_uri(); ?>./media/log1.png" id='logo' class="img-fluid">
         </a>
         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-            <?php wp_nav_menu(array('theme-location' => 'header-menu')); ?>
+        <!-- display menu conditionally login:logout menu -->
+            <?php 
+            $condition = is_user_logged_in();
+            $show_menu = $condition ? wp_nav_menu(array('menu' => 'Menu 2')):wp_nav_menu(array('theme-location' => 'header-menu'));
+            ?>
         </ul>
-        <!--<form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form> -->
     </div>
     </nav>
+    <!-- ajax call to show opening hours -->
     <?php  include_once 'js/ajax_call.js';?>
 
 

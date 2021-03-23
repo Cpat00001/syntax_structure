@@ -177,6 +177,26 @@ a.post_link:hover {
   color: white;
   text-align: center;
 }
+/* styling for Your Profile page */
+.log_main_row_one_left {
+  background-color: cadetblue;
+  min-height: 50px;
+  padding: 10px;
+}
+.log_main_row_one_right {
+  background-color: pink;
+  min-height: 50px;
+  padding: 10px;
+  text-align: center;
+}
+div.row_profile_page.first {
+  margin-top: 1rem;
+}
+div.row_profile_page.second {
+  margin-top: 1rem;
+  min-height: 300px;
+  background-color: darkcyan;
+}
 /* media */
 @media only screen and (min-width: 900px) {
   ul,
