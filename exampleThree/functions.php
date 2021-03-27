@@ -131,5 +131,7 @@ function redirect_to_login_page(){
     //    echo "ZALOGOWANY";
     }
 }
+// get loop with posts=>category='secret'
+include_once 'get_posts.php';
 
 ?>

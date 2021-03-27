@@ -21,6 +21,9 @@ do_action('check_login');
     <div class="row row_profile_page second">
         <div class="col-sm-12">
             <h5>Some more data....</h5>
+            <!-- loop post with category Secret -->
+           <?php echo do_shortcode('[category_secret]'); ?>
+
         </div>
 
     </div>
