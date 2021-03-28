@@ -24,7 +24,12 @@ function wpdocs_setup_theme() {
 }
 add_action( 'after_setup_theme', 'wpdocs_setup_theme' );
 //set thumbnail size
-add_image_size('custom-post-image-size','290','180',true);
+add_action('after_setup_theme','change_images_sizes');
+  function change_images_sizes(){
+    add_image_size('custom-post-image-size','290','180',true);
+    add_image_size('secret_post','290','180',true);
+  } 
+
 //add post-thumbnails / images
 //add_theme_support('post-thumbnails',array('post'));
 
@@ -131,7 +136,7 @@ function redirect_to_login_page(){
     //    echo "ZALOGOWANY";
     }
 }
-// get loop with posts=>category='secret'
+// get loops to select posts
 include_once 'get_posts.php';
 
 ?>
