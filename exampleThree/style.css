@@ -225,9 +225,23 @@ div.row_profile_page.second {
 /* single post */
 #single_post {
   padding: 10px;
-  width: 80%;
+  width: 100%;
   background-color: rgb(152, 96, 204);
   margin: 0 auto;
+  min-height: 500px;
+  height: auto;
+}
+#single_post_img {
+  text-align: right;
+  margin-bottom: 1%;
+}
+.img-rght {
+}
+/* resize ost-img */
+.wp-post-image {
+  width: 500px;
+  max-width: 500px;
+  height: 500px;
 }
 /* media */
 @media only screen and (min-width: 900px) {
