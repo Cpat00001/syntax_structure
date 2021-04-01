@@ -48,4 +48,22 @@
         </div>
     </div>
  </div>
+
+ <!-- carousel -->
+ <div class="container">
+    <?php include_once 'carousel.php'; ?>
+ </div>
+ <!-- carousel -->
+ <div class="container" id="sticky_img_background">
+     <div class="on_fixed_background">
+        <h1 style="color:white;">electricity</h1>
+        <h1 style="color:white;">future</h1>
+        <h1 style="color:white;">eficiency</h1>
+     </div>
+    
+    <!-- <h1 style="color:white;">some text here</h1>
+    <h1 style="color:white;">some text here</h1> -->
+
+ </div>
+
 <?php include 'footer.php'; ?>

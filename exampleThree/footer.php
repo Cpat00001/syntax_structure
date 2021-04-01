@@ -1,6 +1,6 @@
 <?php wp_footer(); ?> 
 <div class="container">
-  <div class="row align-items-end">
+  <div class="row align-items-end" id="footer">
     <div class="col-sm-12 col-md-8 col-lg-6" id="f-left">
       <h5 id="contact_bottom">Phone: 123-456-789</h5>
     </div>

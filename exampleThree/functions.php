@@ -140,6 +140,4 @@ function redirect_to_login_page(){
 // get loops to select posts
 include_once 'get_posts.php';
 
-
-
 ?>
