@@ -29,9 +29,23 @@
                 </div>
                 <!-- post content -->
                 <div class="col-sm-8">
-                    <div id="single_post">
-                        <p><?php the_content(); ?></p>
+                    <div class="row">
+                        <div class="col-12" id="single_post">
+                            <p><?php the_content(); ?></p>
+                        </div>
+                        <div class="col-12">
+                            <!-- post's comments -->
+                            <?php 
+                                if(comments_open()){
+                                    
+                                    echo comments_template();
+                                    
+                                } 
+                            
+                            ?>
+                        </div>
                     </div>
+                    
                 </div>
             </div>
            

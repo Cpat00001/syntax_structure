@@ -51,9 +51,11 @@
 
  <!-- carousel -->
  <div class="container">
-    <?php include_once 'carousel.php'; ?>
+    <div class="row">
+        <?php include_once 'carousel.php'; ?>
+    </div>
  </div>
- <!-- carousel -->
+ <!-- end of carousel -->
  <div class="container" id="sticky_img_background">
      <div class="on_fixed_background">
         <h1 style="color:white;">electricity</h1>
@@ -63,7 +65,24 @@
     
     <!-- <h1 style="color:white;">some text here</h1>
     <h1 style="color:white;">some text here</h1> -->
-
  </div>
+ <div class="container">
+     <div class="row" id="discount">
+         <div class="col-12 col-sm-5 col-md-4 col-lg-3" id="test">
+            <div class="row">
+                <div class="col-12 header_text" id="fifty_px">
+                    <h5 id="capital_discount">Discounts zone:</h5>
+                </div>
+                <div class="col-12" id="discount_header"></div>
+                <div class="col-12" id="fifty_px"></div>
+             </div>             
+         </div>
+         <div class="col-12 col-sm-7 col-md-8 col-lg-9" style="background-color:rgb(186, 182, 169);padding:10px;">
+             <h5>List of products</h5>
+         </div>
+     </div>
+ </div>
+ <?php include 'footer.php'; ?>
 
-<?php include 'footer.php'; ?>
+
+

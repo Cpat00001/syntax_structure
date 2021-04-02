@@ -9,7 +9,7 @@ body {
   height: auto;
   background: linear-gradient(
     141deg,
-    #202020 20%,
+    #202020 40%,
     rgb(143, 147, 148) 61%,
     #727779 85%
   );
@@ -138,6 +138,32 @@ a.post_link:hover {
 .on_fixed_background {
   width: 50%;
   margin: 0 auto;
+}
+#discount {
+  min-height: 400px;
+  height: auto;
+  margin-bottom: 1rem;
+  color: white;
+  font-family: fantasy;
+}
+#capital_discount {
+  height: auto;
+}
+.header_text {
+  font-size: 10px;
+  padding: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+#discount_header {
+  background-color: rgb(186, 182, 169);
+  height: 300px;
+}
+#test {
+  background-color: orangered;
+}
+#fifty_px {
+  height: 50px;
 }
 /* footer */
 #footer {
@@ -280,6 +306,13 @@ div.row_profile_page.second {
   width: 500px;
   max-width: 500px;
   height: 500px;
+}
+/* comments */
+#dsp_comment {
+  background-color: burlywood;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  margin-top: 0.3rem;
 }
 /* media */
 @media only screen and (min-width: 900px) {
