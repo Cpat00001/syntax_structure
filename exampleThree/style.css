@@ -299,6 +299,10 @@ div.row_profile_page.second {
   text-align: right;
   margin-bottom: 1%;
 }
+#single_title {
+  color: white;
+  padding: 1rem;
+}
 .img-rght {
 }
 /* resize ost-img */
@@ -313,6 +317,10 @@ div.row_profile_page.second {
   margin-bottom: 0.5rem;
   padding: 0.5rem;
   margin-top: 0.3rem;
+}
+#reply-title {
+  font-size: 12px;
+  color: white;
 }
 /* media */
 @media only screen and (min-width: 900px) {
