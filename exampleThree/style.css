@@ -7,12 +7,13 @@ Author: Pat
 body {
   /* background-color: rgb(128, 126, 126); */
   height: auto;
-  background: linear-gradient(
+  /* background: linear-gradient(
     141deg,
     #202020 40%,
     rgb(143, 147, 148) 61%,
     #727779 85%
-  );
+  ); */
+  background-color: burlywood;
 }
 .main_text {
   color: brown;
@@ -321,6 +322,34 @@ div.row_profile_page.second {
 #reply-title {
   font-size: 12px;
   color: white;
+}
+/* woocommerce styling */
+/* single product styling */
+#single_rpduct_page {
+  margin-top: 1rem;
+}
+
+/* cart - basket */
+.woocommerce-cart-form {
+  font-size: 15px;
+  background-color: cornflowerblue;
+  margin-top: 1rem;
+  color: white;
+}
+#coupon_code {
+  width: 50%;
+}
+/* checkout page */
+#col-checkout-6 {
+  width: 50%;
+}
+.woocommerce-billing-fields__field-wrapper {
+  text-align: center;
+  margin-left: 10%;
+  width: 400px;
+}
+#customer_details {
+  margin-left: 50px;
 }
 /* media */
 @media only screen and (min-width: 900px) {
