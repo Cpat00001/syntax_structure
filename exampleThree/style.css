@@ -46,7 +46,6 @@ a {
 a:hover {
   color: red;
   text-decoration: none;
-  font-size: 17px;
 }
 #header {
   background-color: rgb(158, 155, 155);
@@ -324,6 +323,9 @@ div.row_profile_page.second {
   color: white;
 }
 /* woocommerce styling */
+
+/* shop */
+
 /* single product styling */
 #single_rpduct_page {
   margin-top: 1rem;
@@ -343,8 +345,11 @@ div.row_profile_page.second {
 #col-checkout-6 {
   width: 50%;
 }
+.form-row {
+  width: 100%;
+  display: block;
+}
 .woocommerce-billing-fields__field-wrapper {
-  text-align: center;
   margin-left: 10%;
   width: 400px;
 }
