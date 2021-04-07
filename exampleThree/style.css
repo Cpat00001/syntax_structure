@@ -356,11 +356,18 @@ div.row_profile_page.second {
 #customer_details {
   margin-left: 50px;
 }
+/* .woocommerce-NoticeGroup-checkout {
+  width: 200px;
+  margin-left: 200px;
+}
+.woocommerce-error {
+  margin-left: 200px;
+} */
 /* media */
 @media only screen and (min-width: 900px) {
   ul,
   li {
     list-style: none;
-    display: inline;
+    /* display: inline; */
   }
 }
