@@ -356,6 +356,11 @@ div.row_profile_page.second {
 #customer_details {
   margin-left: 50px;
 }
+.woocommerce-product-gallery__image {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid crimson;
+}
 /* .woocommerce-NoticeGroup-checkout {
   width: 200px;
   margin-left: 200px;
