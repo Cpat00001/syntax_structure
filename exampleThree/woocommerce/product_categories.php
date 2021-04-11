@@ -21,7 +21,8 @@
                 foreach( get_terms($args) as $category){
                     //var_dump($category);
                     ?>
-                    <li><?php echo $category->name ?> <span style="color:blue;">(<?php echo $category->count; ?>)</span></li>
+                    <!-- add link to category -->
+                    <a href="<?php echo $category->slug; ?>"><li><?php echo $category->name ?> <span style="color:blue;">(<?php echo $category->count; ?>)</span></li></a>
                 <?php
                 } // closing bracket
                 ?>
