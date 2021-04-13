@@ -1,36 +1,24 @@
 <?php get_header(); ?>
 
-<p>Category: <?php single_cat_title(); ?></p>
-<?php 
-    if(is_category('clothing')){ 
-        echo "CLOTHING";
-    
-    }else{
-        $args = array( 
-        'post_type' => 'product',
-        'posts_per_page' => '5'  
-        );
-        $query = new WP_Query($args);
-        var_dump($query);
+<?php
+    // dzialajaca petla
+    $args = array('post_type' => 'product','product_cat' => 'clothing','posts_per_page'=> 10);
 
-        // if($query->have_posts()){
-        //     echo '<ul>';
-        //     while($query->have_posts()){
-        //         $query->post();
-        //         //var_dump($query->post());
-        //         echo '<li>' . $query->post_title .'</li>';
-        //     } 
-        //     echo '</ul>';
-        // }
-        // echo "NOPE <br>";
-        // $query = new WP_Query('slug="clothing"');
-        // var_dump($query);
-        // custom query
-        // global $wpdb;
-        // $user_count = $wpdb->get_var( "SELECT * FROM $wpdb->users" );
-        // var_dump($user_count);
-    } 
+    $loop = new WP_Query($args);
     ?>
+    <div class="container">
+        <?php
+            if($loop->have_posts()){
+                while($loop->have_posts()){
+                    $loop->the_post();
+                    wc_get_template_part( 'content', 'product' );
+                } 
+            } else {
+                echo __('<p>Sorry no posts found</p>');
+            }
+        ?>
+    </div>
+    
     
 
 
