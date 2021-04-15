@@ -1,13 +1,7 @@
 <?php get_header(); ?>
-<h1>category >>> Decor </h1>
 
-<?php 
-    if(is_category('Decor')){ 
-        echo "decor page works";
-    
-    }else{
-        echo "NOPE";
-    } 
-    ?>
+<h5>Decor</h5>
+
+
 
 <?php get_footer(); ?>

@@ -19,7 +19,7 @@
                 <?php
                 //execute loop
                 foreach( get_terms($args) as $category){
-                    var_dump($category);
+                    //var_dump($category);
                     ?>
                     <!-- add link to category -->
                     <a href="<?php echo $category->slug; ?>"><li><?php echo $category->name ?> <span style="color:blue;">(<?php echo $category->count; ?>)</span></li></a>
