@@ -324,11 +324,21 @@ div.row_profile_page.second {
 }
 /* woocommerce styling */
 
-/* shop */
+/* shop @@@@@@@@@@@@@@@@@@@@@@@ */
 
 /* single product styling */
 #single_rpduct_page {
   margin-top: 1rem;
+}
+/* clothing webpage */
+#select_color {
+  background-color: pink;
+  border: 2px solid purple;
+}
+#filter_hints {
+  background-color: rgb(167, 128, 134);
+  border: 2px solid black;
+  text-align: center;
 }
 
 /* cart - basket */

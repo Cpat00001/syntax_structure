@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-
+<?php include 'filters.php'; ?>
 <?php
     // dzialajaca petla
     // $args = array('post_type' => 'product','product_cat' => 'clothing','posts_per_page'=> 10);
@@ -43,8 +43,4 @@ $loop = new WP_Query($args);
         }
     ?>
 </div>
-    
-    
-
-
 <?php get_footer(); ?>
