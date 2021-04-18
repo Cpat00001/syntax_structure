@@ -340,6 +340,13 @@ div.row_profile_page.second {
   border: 2px solid black;
   text-align: center;
 }
+.product_filter_form {
+  padding: 10px;
+}
+.filter_confirmation_text {
+  color: black;
+  font-weight: 700;
+}
 
 /* cart - basket */
 .woocommerce-cart-form {
