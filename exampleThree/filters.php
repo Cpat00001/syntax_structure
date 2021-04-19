@@ -1,3 +1,70 @@
+    <!-- process form -->
+    <?php
+
+//empty errors
+$radioError = '';
+
+if($_SERVER['REQUEST_METHOD'] == 'GET'){
+    $color = $_GET['color'];
+    $size = $_GET['size'];
+    $destination = $_GET['destination'];
+    $radio = $_GET['relation'];
+    if(empty($_GET['relation'])){
+        $radioError = " ** Check radio button";
+    }else{
+        $radioError = ' ';
+    }
+   var_dump($color);
+   echo "<br>";
+    var_dump($size);
+    echo "<br>";
+    var_dump($destination);
+    echo "<br>";
+    var_dump($radio);
+//prepqre query
+$args_color_size = array(
+    'post_type' => 'product',
+    // 'relation' => 'AND',
+    'tax_query'      => array(
+        'relation' => $radio,
+        array(
+        'taxonomy'        => 'pa_color',
+        'field'           => 'slug',
+        'terms'           =>  $color,
+        'operator'        => 'IN',
+    ),
+    array(
+        'taxonomy' => 'pa_size',
+        'field' => 'slug',
+        'terms' => $size,
+        'operator' => 'IN'
+    ),
+    array(
+        'taxonomy' => 'pa_destination',
+        'field' => 'slug',
+        'terms' => $destination,
+        'operator' => 'IN',
+    ))
+    );
+//execute
+$loop_color = new WP_Query( $args_color_size );
+if ( $loop_color->have_posts() ) {
+    while ( $loop_color->have_posts() ){
+        $loop_color->the_post();?>
+        <h5>Results according to your filters</h5>
+         <?php
+        echo "<p class='filter_confirmation_text'> used filters: " . $_GET['color'] . ' , ' . $_GET['size'] . ' , ' . $_GET ['destination'] . '</p><br><br>';
+        wc_get_template_part( 'content', 'product' );
+
+    } 
+} else {
+    // echo __( 'No products found' );
+}
+wp_reset_postdata();
+ }
+// #####
+?>
+
 <!-- html form -->
 <div class="container">
     <div class="row" style="margin-top:0.5rem;">
@@ -6,7 +73,7 @@
         <!-- form -->
         <form method="GET" action="<?php echo htmlspecialchars($_SERVER[" __FILE__ "]);?>" class="product_filter_form">
         <div class="row">
-            <div class="col-sm-12 col-md-3">
+            <div class="col-sm-12 col-md-2">
                 <label for="color"><?php _e('Search by color','textdomain') ?></label><br>
                 <select name="color" id="color">
                     <option value="<?php _e('red','textdomain') ?>">Red</option>
@@ -14,7 +81,7 @@
                     <option value="<?php _e('green','textdomain') ?>">Green</option>
                 </select>
             </div>
-            <div class="col-sm-12 col-md-3">
+            <div class="col-sm-12 col-md-2">
                 <label for="size"><?php _e('Search by size','textdomain'); ?></label><br>
                 <select name="size" id="size">
                     <option value="<?php _e('small','textdomain')?>">Small</option>
@@ -30,8 +97,15 @@
                 </select>
                
             </div>
-            <div class="class=sm-12 col-md-3">
-            <!-- add fourth product filter -->
+            <div class="class=sm-12 col-md-5">
+            <!-- radio buttons -->
+            <input type="radio" id="OR" name="relation" value="OR">
+            <label for="radio_button_one">One of chosen parameters</label>
+            <br>
+            <span class="radioError"><?php echo $radioError; ?></span>
+            <br>
+            <input type="radio" id="AND" name="relation" value="AND">
+            <label for="radio_button_two">Contains ALL parameters</label>
             </div>
         </div>
             
@@ -47,51 +121,7 @@
     </div>
 </div>
 <div class="container" style="border:2px solid white;margin-bottom:50px;">
-    <!-- process form -->
-        <?php
-        if($_SERVER['REQUEST_METHOD'] == 'GET'){
-            $color = $_GET['color'];
-            $size = $_GET['size'];
-            $destination = $_GET['destination'];
-           var_dump($color);
-           echo "<br>";
-            var_dump($size);
-            echo "<br>";
-            var_dump($destination);
-        //prepqre query
-        $args_color_size = array(
-            'post_type' => 'product',
-            'relation' => 'AND',
-            'tax_query'      => array( array(
-                'taxonomy'        => 'pa_color',
-                'field'           => 'slug',
-                'terms'           =>  $color,
-                'operator'        => 'IN',
-            ),
-            array(
-                'taxonomy' => 'pa_size',
-                'field' => 'slug',
-                'terms' => $size,
-                'operator' => 'IN'
-            ))
-            );
-        //execute
-        $loop_color = new WP_Query( $args_color_size );
-        if ( $loop_color->have_posts() ) {
-            while ( $loop_color->have_posts() ){
-                $loop_color->the_post();?>
-                <h5>Results according to your filters</h5>
-                 <?php
-                echo "<p class='filter_confirmation_text'> used filters: " . $_GET['color'] . ' , ' . $_GET['size'] . ' , ' . $_GET ['destination'] . '</p><br><br>';
-                wc_get_template_part( 'content', 'product' );
-
-            } 
-        } else {
-            // echo __( 'No products found' );
-        }
-        wp_reset_postdata();
-         }
-        // #####
-        ?>
 </div>
+
+
 

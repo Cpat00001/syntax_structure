@@ -340,6 +340,10 @@ div.row_profile_page.second {
   border: 2px solid black;
   text-align: center;
 }
+.radioError {
+  color: red;
+  font-weight: 800;
+}
 .product_filter_form {
   padding: 10px;
 }
