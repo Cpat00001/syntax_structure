@@ -1,4 +1,31 @@
 <?php get_header(); ?>
+<?php 
+$get_path = __FILE__;
+// echo $get_path;
+//include 'get_product_category.php';
+// '@@@@@@@@@@@@@@@@@@@@@@@@@@ dodaj kod ponizej do osobnego pliku i pozniej elestycznie
+// wklejaj do page-productcategory
+$c = pathinfo(__FILE__);
+$a = $c['filename'];
+echo "<h5> test: ". $a ."</h5>";
+var_dump($a);
+$b = $_SERVER['PHP_SELF'];
+echo "<h1>Rzuc wynik " . $a ."</h1>";
+echo "<br>";
+$find = '-';
+$d = strpos($a,$find);
+$d_plus_one = intval($d) + 1;
+var_dump($d_plus_one);
+$sl = strlen($a);
+$dl = intval($sl - $d_plus_one);
+$chop_string = substr($a,-$dl);
+echo "<h5>wystepuje w numerze: </h5> " . $d . " string length:" . $sl . "<br> dlugosc str:" . $dl ; 
+echo "<br>";
+var_dump($chop_string);
+
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+?>
 <div class="container">
     <h5>Accessories</h5>
     <div class="row">
@@ -55,6 +82,31 @@
     </div>
 
 </div>
+
+<?php
+// $cat = is_product_category('accessories');
+//$cat = $_SERVER['REQUEST_URI'];
+// podaj dynamicznie nazwe strony/kategorii z URL , 
+//wtedy dynamicznie mozesz podawac filtry wyszukiwania do kazdej,podajac jako $var do filters.php
+// a w filters do $args_color_size_destination jako product_cat podasz wynik wlasnie ze zmiennej
+// $c = pathinfo(__FILE__);
+// $a = $c['filename'];
+// var_dump($a);
+// $b = $_SERVER['PHP_SELF'];
+// echo "<h1>Rzuc wynik " . $a ."</h1>";
+// echo "<br>";
+// $find = '-';
+// $d = strpos($a,$find);
+// $d_plus_one = intval($d) + 1;
+// var_dump($d_plus_one);
+// $sl = strlen($a);
+// $dl = intval($sl - $d_plus_one);
+// $chop_string = substr($a,-$dl);
+// echo "<h5>wystepuje w numerze: </h5> " . $d . " string length:" . $sl . "<br> dlugosc str:" . $dl ; 
+// echo "<br>";
+// var_dump($chop_string);
+// jesli masz juz zlapany string dynamicznie po wystepujacym page-{} to podaj to do WP_QUERY
+?>
 
 
 

@@ -110,10 +110,10 @@ $args_color_size_destination = array(
     );
 //execute
 $loop_color = new WP_Query( $args_color_size_destination ); ?>
-<h5>Results according to your filters</h5>
 <?php
-if ( $loop_color->have_posts() ) {
-    while ( $loop_color->have_posts() ){
+if ( $loop_color->have_posts() ) {?>
+    <h5>Results according to your filters</h5>
+    <?php while ( $loop_color->have_posts() ){
         $loop_color->the_post();?>
         <div class="container" style="background-color:peru;border:2px solid violet;margin-bottom:0.25rem;">
         <?php
@@ -127,7 +127,7 @@ if ( $loop_color->have_posts() ) {
     } 
 } else { ?>
     <div class="container">
-     <?php echo __( '<h5>Search for products.So far No products found</h5>' ); ?>
+     <?php echo __( '<h5>Search for products you like.</h5>' ); ?>
     </div>
 <?php 
 }
