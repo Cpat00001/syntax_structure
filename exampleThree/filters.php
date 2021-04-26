@@ -61,6 +61,10 @@
     <!-- process form -->
     <?php
 
+    //podaj dynamicznie product_cat z get_product_category.php
+    $prod_cat = $up_chop_string;
+    echo "<h5> dynamic prod_cat: ". $prod_cat ."</h5>";
+
 //empty errors
 $radioError = '';
 

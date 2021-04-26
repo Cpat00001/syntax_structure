@@ -1,39 +1,20 @@
 <?php get_header(); ?>
 <?php 
-$get_path = __FILE__;
-// echo $get_path;
-//include 'get_product_category.php';
-// '@@@@@@@@@@@@@@@@@@@@@@@@@@ dodaj kod ponizej do osobnego pliku i pozniej elestycznie
-// wklejaj do page-productcategory
-$c = pathinfo(__FILE__);
-$a = $c['filename'];
-echo "<h5> test: ". $a ."</h5>";
-var_dump($a);
-$b = $_SERVER['PHP_SELF'];
-echo "<h1>Rzuc wynik " . $a ."</h1>";
-echo "<br>";
-$find = '-';
-$d = strpos($a,$find);
-$d_plus_one = intval($d) + 1;
-var_dump($d_plus_one);
-$sl = strlen($a);
-$dl = intval($sl - $d_plus_one);
-$chop_string = substr($a,-$dl);
-echo "<h5>wystepuje w numerze: </h5> " . $d . " string length:" . $sl . "<br> dlugosc str:" . $dl ; 
-echo "<br>";
-var_dump($chop_string);
-
-
-// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+$get_path = pathinfo(__FILE__);
+//var_dump($get_path);
+include 'get_product_category.php';
+include 'filters.php';
 ?>
 <div class="container">
-    <h5>Accessories</h5>
+    <h5><?php echo $up_chop_string; ?></h5>
     <div class="row">
         <div class="col-10" style="background-color:pink;">
             <h5>List of products</h5>
             <?php
-                $args = array('post_type' => 'product','product_cat'=>'accessories','posts_per_page' => '30');
-            $loop = new WP_Query($args);
+                // $args = array('post_type' => 'product','product_cat'=>'accessories','posts_per_page' => '30');
+                $args = array('post_type' => 'product','product_cat'=>$up_chop_string,'posts_per_page' => '30');
+
+                $loop = new WP_Query($args);
 
             if($loop->have_posts()){
                 while($loop->have_posts()){?>
