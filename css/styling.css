@@ -1,0 +1,59 @@
+body {
+  background-color: rgb(224, 220, 220);
+}
+.header {
+  background-color: white;
+}
+.menu-column-left {
+  text-align: left;
+  line-height: 2.5;
+  padding-top: 2%;
+}
+.menu-column-right {
+  text-align: right;
+  line-height: 2.5;
+  padding-top: 2%;
+}
+a {
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+}
+a:hover {
+  text-decoration: none;
+  color: green;
+}
+.nav {
+  padding-top: 20px;
+}
+.row {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+/* responsive */
+/* // Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+  .order-1 {
+    order: 12;
+  }
+  .order-12 {
+    order: 0;
+  }
+  .menu-column-left {
+    text-align: right;
+  }
+  .menu-column-right {
+    text-align: right;
+    padding: 5%;
+  }
+  .order-12 mobile {
+    order: 12;
+  }
+  .dynamic_button {
+    width: 100px;
+    height: 50px;
+    margin-bottom: 2%;
+    background-color: chartreuse;
+  }
+}
