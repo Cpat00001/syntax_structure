@@ -15,17 +15,20 @@
     
     <div class="container">
             <div class="row header">
-                <div class="col-sm-3 menu-column-left order-1">
-                      <div class="lc_one"><a href="#">News</a></div>
-                      <div class="lc_two"><a href="#">Events</a></div>
-                      <div class="lc_three"><a href="#">Giveaways</a></div>
-                </div>
+              <div class="dynamic_button col-sm-3 menu-column-left order-1" onclick="show_hide_dynamic()">
+                <div class="dynamicmenu">
+                  <!-- <div class="col-sm-3 menu-column-left order-1"> -->
+                        <div class="lc_one"><a href="#">News</a></div>
+                        <div class="lc_two"><a href="#">Events</a></div>
+                        <div class="lc_three"><a href="#">Giveaways</a></div>
+                  <!-- </div> -->
+                <!-- xxx -->
+              </div>
+            </div>
                 <div class="col-sm-6 menu-column-center order-2">
                     <img src="./media/logo.png" class="img-fluid" alt="Responsive image">
                 </div>
                 <div class="col-sm-3 menu-column-right order-12">
-                  <div class="dynamic_button">
-                    <div class="dynamicmenu">
                       <div class="rc_one">
                             <a href="#">MY ACCOUNT 
                                 <i class="far fa-user-circle fa-2x"></i>
@@ -37,11 +40,13 @@
                               <i class="fas fa-shopping-bag fa-2x"></i> 
                           </a>
                     </div>
-                    </div>
-                  </div>
-                      <div class="rc_three">
+                      <!-- <div class="rc_three">
                           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                     </div>
+                     </div> -->
+                </div>
+                <!-- separate input search form -->
+                <div class="rc_three">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 </div>
             </div>
 

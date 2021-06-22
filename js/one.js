@@ -16,12 +16,17 @@ function hide_menu(){
 }
 
 // hide show dynamicmenu on click
-db.addEventListener("click",show_hide_dynamic);
+// db.addEventListener("click",show_hide_dynamic);
+
+// function show_hide_dynamic(){
+//     if(dm.style.display === "none"){
+//         dm.style.display = "block";
+//     }else{
+//         dm.style.display = "none";
+//     }
+// }
 
 function show_hide_dynamic(){
-    if(dm.style.display === "none"){
         dm.style.display = "block";
-    }else{
-        dm.style.display = "none";
+        alert('test');
     }
-}

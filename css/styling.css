@@ -1,8 +1,14 @@
 body {
   background-color: rgb(224, 220, 220);
+  font-family: Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
+  font-size: 13.75px;
 }
 .header {
   background-color: white;
+  /* font-family: 'JosefinSansRegular'; */
+  color: #000;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 .menu-column-left {
   text-align: left;
@@ -15,9 +21,11 @@ body {
   padding-top: 2%;
 }
 a {
-  color: black;
   text-decoration: none;
-  font-weight: 500;
+  /* font-family: 'JosefinSansRegular'; */
+  color: #000;
+  font-weight: 600;
+  text-transform: uppercase;
 }
 a:hover {
   text-decoration: none;
@@ -50,10 +58,15 @@ a:hover {
   .order-12 mobile {
     order: 12;
   }
+  .rc_three {
+    order: 3;
+  }
   .dynamic_button {
     width: 100px;
     height: 50px;
     margin-bottom: 2%;
     background-color: chartreuse;
+    order: 12;
+    margin-bottom: 1px;
   }
 }
