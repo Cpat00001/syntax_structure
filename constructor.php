@@ -1,34 +1,129 @@
-<?php 
+<?php
 
-class AAA{
+//abstract class
 
-    public function printer($string){
-        echo 'Print out from parent class AAA -> string given : ' . $string;
+abstract class Property{
+
+    public $type;
+
+    public function __construct($type,$windows){
+        $this->type = $type;
+        $this->windows = $windows;
     }
+    abstract protected function shortDesc($type, $windows);
+}
 
-    public function printer_two(){
-        echo "Simply text accessed in parent class";
+class BigHouse extends Property{
+
+    public function shortDesc($type , $windows=null) {
+        return "you have chosen: " . $this->type . " of house with " .$this->windows . " windows<br>";
+    }
+}
+class SmallHouse extends Property{
+
+    public function shortDesc($type , $windows) {
+        return "you have chosen: " . $this->type . " of house with " . $this->windows . " windows<br>";
     }
 }
 
-class BBB extends AAA{
+$b = new BigHouse('BIG' , 7);
+echo $b->shortDesc('BIG' , 7);
 
-    public function printer($string){
-        echo 'BBB class can overwrite methods from parent -> string given changed to ' . $string; 
-    }
-}
-
-$aaa = new AAA();
-$bbb = new BBB();
-
-$aaa->printer('parent');
-echo "<br>";
-$aaa->printer_two();
-echo "<br>";
-$bbb->printer('child');
+$s = new SmallHouse('small', 4);
+echo $s->shortDesc('small', 4);
 
 
 
+
+// abstract class Hello{
+
+//     public $name;
+//     public function __construct($name){
+//         $this->name = $name;
+//     }
+//     abstract public function welcome() : string;
+// }
+// class Portuguese extends Hello{
+
+//     public function welcome() : string {
+//         return "Welcome in portuguese is " . $this->name . "<br>";
+//     }
+// }
+// class Polski extends Hello{
+
+//     public function welcome() : string{
+//         return "Hello po polsku is " . $this->name . "<br>";
+//     }
+// }
+// $p = new Portuguese('bem vinda');
+// echo $p->welcome();
+
+// $pol = new Polski('Witaj');
+// echo $pol->welcome();
+
+
+
+// class Base{
+
+//     public function abc(){
+//         echo "Public Function ABC prints some text...";
+//     }
+//     protected function ddd(){
+//         echo "Protected Function DDD prints text...";
+//     }
+// }
+// class SubBase extends Base{
+
+//     public function eee(){
+//         echo "Below will output text from parent class function abc...<br>";
+//         parent:: abc();
+//     }
+// }
+
+// $sb = new SubBase();
+// echo($sb->eee());
+
+// class Base{
+//     function __construct(){
+//         echo 'Hello from BASE<br>';
+//     }
+// }
+// class SubBase extends Base{
+    
+//     function __construct(){
+//         parent:: __construct();
+//         echo "Hello from SubClass";
+//     }
+// }
+// $b = new Base();
+// $sb = new SubBase();
+
+// class AAA{
+
+//     public function printer($string){
+//         echo 'Print out from parent class AAA -> string given : ' . $string;
+//     }
+
+//     public function printer_two(){
+//         echo "Simply text accessed in parent class";
+//     }
+// }
+
+// class BBB extends AAA{
+
+//     public function printer($string){
+//         echo 'BBB class can overwrite methods from parent -> string given changed to ' . $string;
+//     }
+// }
+
+// $aaa = new AAA();
+// $bbb = new BBB();
+
+// $aaa->printer('parent');
+// echo "<br>";
+// $aaa->printer_two();
+// echo "<br>";
+// $bbb->printer('child');
 
 // class Sofa{};
 // class Chair{};
@@ -50,8 +145,6 @@ $bbb->printer('child');
 //     }
 // }
 
-
-
 // $nums = range(1,42);
 // shuffle($nums);
 
@@ -63,9 +156,6 @@ $bbb->printer('child');
 // foreach($nums as $n){
 //     echo $n . "</br>";
 // }
-
-
-
 
 // class Math{
 
@@ -94,9 +184,7 @@ $bbb->printer('child');
 // }
 // echo Hello::PRINT_MSG;
 // $h = new Hello();
-// $h->sayBye(); 
-
-
+// $h->sayBye();
 
 // class Car{
 
@@ -135,8 +223,6 @@ $bbb->printer('child');
 // $b = $a->profile();
 // echo $b;
 
-
-
 // class One{
 
 //     function __construct($arg){
@@ -145,7 +231,6 @@ $bbb->printer('child');
 // }
 // $a = new One("screwdriver");
 // echo $a;
- 
 
 // class One{
 
