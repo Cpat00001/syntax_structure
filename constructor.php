@@ -1,36 +1,121 @@
 <?php
 
+//interfacec
+
+interface Door{
+
+    public function material();
+    public function color();
+}
+interface Window{
+
+    public function size();
+    public function frame();
+}
+interface Heating{
+
+    public function gas();
+    public function electric();
+}
+class House implements Door, Window, Heating{
+
+    public function material() { echo "Wood";}
+    public function color() { echo "Neutral";}
+
+    public function size() { echo "Big House";}
+    public function frame() { echo "Medium size window";}
+
+    public function gas() { echo " Gas heaters are expensive";}
+    public function electric() { echo "Electric heaters can be cheap - if renewable energy";}
+}
+
+$h = new House();
+
+echo  $h->material() . "<br>" . $h->color() . "<br>" .$h->size(). "<br>" . $h->electric();
+
+
+
 //abstract class
+// abstract class Furniture{
 
-abstract class Property{
+//     abstract protected function item($material);
 
-    public $type;
+// }
+// class Chair extends Furniture{
 
-    public function __construct($type,$windows){
-        $this->type = $type;
-        $this->windows = $windows;
-    }
-    abstract protected function shortDesc($type, $windows);
-}
+//     public function item($material , $currency = '$$'){
 
-class BigHouse extends Property{
+//         if($material == 'wood'){
+//             $price = 100; 
+//         }elseif($material == 'playwood'){
+//             $price = 50;
+//         }else{
+//             $price = 65;
+//         }
+//         return $material . " we sell at price of " . $price . $currency;
+//     }
+// }
+// $a = new Chair();
+// echo $a->item('plastic');
 
-    public function shortDesc($type , $windows=null) {
-        return "you have chosen: " . $this->type . " of house with " .$this->windows . " windows<br>";
-    }
-}
-class SmallHouse extends Property{
 
-    public function shortDesc($type , $windows) {
-        return "you have chosen: " . $this->type . " of house with " . $this->windows . " windows<br>";
-    }
-}
+// abstract class Build{
 
-$b = new BigHouse('BIG' , 7);
-echo $b->shortDesc('BIG' , 7);
+//     protected $wood = 0;
+//     protected $concrete = 0;
 
-$s = new SmallHouse('small', 4);
-echo $s->shortDesc('small', 4);
+//     public abstract function constructionSite();
+// }
+// class House extends Build{
+
+//     private $size;
+
+//     public function __construct($wood , $concrete , $size){
+//         $this->wood = $wood;
+//         $this->concrete = $concrete;
+//         $this->size = $size;
+//     }
+//     public function constructionSite(){
+//         return $this->wood * $this->concrete * $this->size;
+//     }
+// }
+// $a = new House(5,5,5);
+// echo "To build new house you need " . $a->constructionSite() . "meters of materials(wood and concrete)";
+
+
+
+
+
+
+// abstract class Property{
+
+//     public $type;
+
+//     public function __construct($type,$windows){
+//         $this->type = $type;
+//         $this->windows = $windows;
+//     }
+//     abstract protected function shortDesc($type, $windows);
+// }
+
+// class BigHouse extends Property{
+
+//     public function shortDesc($type , $windows=null) {
+//         return "you have chosen: " . $this->type . " of house with " .$this->windows . " windows<br>";
+//     }
+// }
+// class SmallHouse extends Property{
+
+//     public function shortDesc($type , $windows) {
+//         return "you have chosen: " . $this->type . " of house with " . $this->windows . " windows<br>";
+//     }
+// }
+
+// $b = new BigHouse('BIG' , 7);
+// echo $b->shortDesc('BIG' , 7);
+
+// $s = new SmallHouse('small', 4);
+// echo $s->shortDesc('small', 4);
 
 
 
