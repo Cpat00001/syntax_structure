@@ -1,37 +1,186 @@
 <?php
 
+
+// exception
+
+// define("MIN_PRICE",100);
+
+// class CheckPrice extends Exception{
+
+//     public function __construct($message){
+//         parent::__construct($message);
+//     }
+// };
+
+// $newPrice = 80;
+
+// try{
+//     if($newPrice < 100){
+//         throw new CheckPrice('Stary Twoja cena jest zbyt niska');
+//     }
+// }catch( CheckPrice $e){
+//     echo $e->getMessage();
+// }
+
+// function error_handler($errstring, $errno, $errfile, $line) {
+//     throw new ErrorException($errstring, $errno, $errfile, $line);
+// }
+// set_error_handler("error_handler");
+
+// function ZeroDiv($a,$b){
+        
+//     $c = $a/$b;
+//     echo 'Result: ' . $c;
+// }
+
+// try{
+//     ZeroDiv(10,0);
+// }catch(ErrorException $e){
+//     echo 'Blad wystapił:';
+//     echo $e->getMessage();
+// }
+
+
+//printing expression ONLY PHP 8.0 && above
+// class SpecException extends Exception{};
+
+// function some_function(){
+//     echo 'just random text as exceptrion output<br>';
+// }
+
+// function tester(){
+//     some_function() or throw new SpecException('Oops i did it again<br>');
+// }
+// try{
+//     tester();
+// }catch(Exception $e){
+//     print $e->getMessage();
+// }
+
+//omitting caught expression ONLY PHP 8.0 && above
+// class ABCException extends Exception{};
+
+// class xyz{
+
+//     public function tester(){
+//         try{
+//             throw new ABCException('heelo masz blad');
+//         }catch(ABCException){
+//             print 'ABCException was thrown without calling "caught variable"';
+//         }
+//     }
+// }
+// $a = new xyz();
+// $a->tester();
+
+//multi exception
+
+// class TestException extends Exception{};
+
+// class SecondTestException extends Exception{};
+
+// class abc{
+//     public function tester(){
+//         try{
+//             throw new TestException();
+//         }catch(TestException | SecondTestException $e){
+//             var_dump(get_class($e));
+//         }
+//     }
+// }
+// $a = new abc();
+// $a->tester(); 
+
+
+//nested exception
+// class TestException extends Exception{};
+
+// class Test{
+
+//     public function abc(){
+//         try{
+//             try{
+//                 throw new TestException('masz blad');
+//             }catch(TestException $e){
+//                 throw $e;
+//             }
+//         }catch(Exception $e){
+//             var_dump($e->getMessage());
+//         }
+//     }
+// }
+// $a = new Test();
+// $a->abc();
+
+//try catch finally block
+// function test(){
+//     try{
+//         throw new Exception('abc');
+//     }catch( Exception $e){
+//         $e->getMessage();
+//     }finally{
+//         echo 'finally section';
+//     }
+// }
+// test();
+
+// class Test{
+
+//     private $number;
+
+//     public function __construct($number){
+
+//         $this->number = $number;
+//     }
+//     public function cn($number){
+
+//     // var_dump($this->number);
+//         if($this->number > $number){
+//             throw new Exception('Number cannot be over ' . $number);
+//         }else{
+
+//             echo 'Number is OK';
+//             return true;
+//         }
+//     }
+// }
+// $a = new Test(3);
+// $a->cn(5);
+//var_dump($a);
+
+
 //interfacec
 
-interface Door{
+// interface Door{
 
-    public function material();
-    public function color();
-}
-interface Window{
+//     public function material();
+//     public function color();
+// }
+// interface Window{
 
-    public function size();
-    public function frame();
-}
-interface Heating{
+//     public function size();
+//     public function frame();
+// }
+// interface Heating{
 
-    public function gas();
-    public function electric();
-}
-class House implements Door, Window, Heating{
+//     public function gas();
+//     public function electric();
+// }
+// class House implements Door, Window, Heating{
 
-    public function material() { echo "Wood";}
-    public function color() { echo "Neutral";}
+//     public function material() { echo "Wood<br>";}
+//     public function color() { echo "Neutral<br>";}
 
-    public function size() { echo "Big House";}
-    public function frame() { echo "Medium size window";}
+//     public function size() { echo "Big House<br>";}
+//     public function frame() { echo "Medium size window<br>";}
 
-    public function gas() { echo " Gas heaters are expensive";}
-    public function electric() { echo "Electric heaters can be cheap - if renewable energy";}
-}
+//     public function gas() { echo " Gas heaters are expensive<br>";}
+//     public function electric() { echo "Electric heaters can be cheap - if renewable energy<br>";}
+// }
 
-$h = new House();
+// $h = new House();
 
-echo  $h->material() . "<br>" . $h->color() . "<br>" .$h->size(). "<br>" . $h->electric();
+// echo  $h->material() . "<br>" . $h->color() . "<br>" .$h->size(). "<br>" . $h->electric();
 
 
 
