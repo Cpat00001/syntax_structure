@@ -1,5 +1,101 @@
 <?php
 
+// scope
+
+//global scope used in a function
+
+// function aaa($a){
+
+//     if(!isset($a)){
+//         $a = 1;
+//     }else{
+//         $a = $a;
+//     }
+//     return $a;
+// }
+// $b = aaa(3);
+// echo($b);
+    
+
+//static variable + recursive function
+// function foo(){
+//     static $int = 1;
+//     static $int = 1+2;
+
+//     $int++;
+//     echo $int;
+// }
+// foo();
+
+// function test(){
+
+//     static $count = 0;
+//     $count++;
+
+//     if($count <= 10){
+//         echo $count . '<br>';
+//         test();
+//     }
+//     $count--;
+// }
+// test();
+// function test(){
+
+//     static $a = 0;
+//     print_r($a);
+//     $a++;
+// }
+// $b = test();
+
+// $a = 6;
+
+// class random{
+
+//     function aaa(){
+//         global $a;
+//         return $a * $a;
+//     }
+// }
+// $x = new random();
+// echo($x->aaa());
+
+// $a = 1;
+// $b = 2;
+
+// function sum(){
+//     $GLOBALS['b'] = $GLOBALS['a'] + $GLOBALS['b'];
+// }
+// sum();
+// print_r($b); //print 3
+
+// $a = 1;
+// $b = 2;
+
+// function test(){
+
+//     global $a , $b;
+//     return $a + $b; 
+// }
+// $c = test();
+// print_r($c); //outputs 3 as sum of global $a,$b used in function
+
+// $a = 'global scope';
+
+// function test(){
+//     // $a = 'local scope in function';
+//     echo $a;
+// }
+// test();//does not print $a value from test() as it is not declared locally
+
+// $abc = 'access to $abc from another file and printed out';
+// include 'overloading.php';
+
+// function one(){
+//     $a = 'inside variable<br>';
+// }
+// $a = 'outside variable<br>';
+// one();
+// print_r($a); //'outside var printed out'
 
 // exception
 
