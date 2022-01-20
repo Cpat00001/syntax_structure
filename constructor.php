@@ -1,5 +1,138 @@
 <?php
 
+//structural => adapter
+
+//italian => to => french
+
+class French{
+
+    public function parler(): string
+    {
+        return 'Mowie po francusku'; 
+    }
+}
+class Italian{
+    public function parlare(): string
+    {
+        return "Mowie po wlosku";
+    }
+}
+class Latin extends French{
+
+    private $italian;
+
+    public function __construct(Italian $italian){
+        $this->italian = $italian;
+    }
+    public function parler():string
+    {
+        return "PLATFORMA TLUMACZEN: " . $this->italian->parlare() . " ALE zaraz zmienie wloski na francuski";
+    }
+}
+function tlumaczenie(French $french){
+    echo $french->parler();
+}
+
+$francuski = new French();
+$fff = tlumaczenie($francuski) . "<br>";
+echo($fff);
+
+$wloski = new Italian();
+$iii = $wloski->parlare() . "<br>";
+echo($iii);
+
+$lacina = new Latin($wloski);
+$platform = tlumaczenie($lacina);
+echo($platform);
+
+// class Rev{
+
+//     public function __construct($string){
+//         $this->string = $string;
+//     }
+//     public function convert(){
+//         return strrev($this->string);
+//     }
+// }
+// $a = new Rev('Jesli czytasz ten tekst to znaczy poprawnie,ze ADAPTER zadzialal');
+// $b = $a->convert(); 
+// echo $b;
+
+// abstract
+
+// abstract class Dom{
+
+//     abstract protected function getName();
+//     abstract protected function material($element);
+
+//     public function printOut(){
+//         return $this->getName();
+//     }
+// }
+// class threeFive extends Dom{
+
+//     public function getName(){
+//         return "35m2<br>";
+//     }
+//     public function material($element){
+//         return "35m2 of {$element} <br>";
+//     }
+// }
+// class sevenZero extends Dom{
+
+//     public function getName(){
+//         return "70m2";
+//     }
+//     public function material($element){
+//         return $this->getName() . " of {$element} <br>";
+//     }
+// }
+// $a = new threeFive();
+// $a->printOut();
+// echo($a->getName());
+// echo($a->material('concrete'));
+
+// $b = new sevenZero;
+// print_r($b->material('Wood'));
+
+
+
+// abstract class abc{
+
+//     abstract protected function getValue();
+//     abstract protected function prefix($prefix);
+
+//     public function printer(){
+//         print $this->getValue() . "\n";
+//     }
+// }
+
+// class One extends abc{
+
+//     protected function getValue(){
+//         return 'Class One</br>';
+//     }
+//     public function prefix($prefix){
+//         return "{$prefix} Class One<br>";
+//     }
+// }
+// class Two extends abc{
+
+//     public function getValue(){
+//         return "class Two<br>";
+//     }
+//     public function prefix($prefix){
+//         return "{$prefix} Class Two<br>";
+//     }
+// }
+// $a = new One;
+// $a->printer();
+// echo($a->prefix('FOO_'));
+
+// $b = new Two;
+// $b->printer();
+// echo($b->prefix("ELO__"));
+
 // scope
 
 //global scope used in a function
