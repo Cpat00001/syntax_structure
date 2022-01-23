@@ -1,49 +1,170 @@
 <?php
 
+//traits
+// class One{
+
+//     public function Kolory(){
+//         echo 'Zielony';
+//     }
+// }
+// trait Mix{
+//     public function Kolory(){
+//         parent::Kolory();
+//         echo ' Niebieski, Zólty';
+//     }
+// }
+// class Two extends One{
+//     use Mix;
+// }
+
+// $a = new Two();
+// echo($a->Kolory());
+
+//static
+
+// class Foo{
+
+//     public static $my_static = 'fiu fiu';
+
+//     public function showStatic(){
+//         return self::$my_static;
+//     }
+// }
+// $a = new Foo();
+// echo($a->showStatic());
+
+//echo (Foo::$my_static);
+
+// class Dog{
+
+//     public $name;
+//     public $breed;
+
+//     public function __construct($name,$breed){
+//         $this->name = $name;
+//         $this->breed = $breed;
+//     }
+//     function __toString(){
+//         return $this->name . ' is a typical ' . $this->breed;
+//     }
+//     // function printer(){
+//     //     return $this->name . ' is a typical ' . $this->breed;
+//     // }
+// }
+// $a = new Dog('Rocky','boxer');
+// $b = new Dog('Bobby', 'kundel');
+// print $a;
+// echo "<br>";
+// echo $b;
+//print_r($a);
+//echo $a;
+// echo $a->printer();
+
+//const + static
+// class Example{
+
+//     public static $haslo = 'Czekolada';
+//     private static $klucz = ' mrozona z kawa';
+
+//     public static function elo(){
+//         echo '<br>pelen dostep: ' . self::$haslo , self::$klucz;
+//     }
+// }
+// echo Example::$haslo;
+// echo Example::elo();
+
+// class One{
+
+//     const ABC = 'ABC stala<br>';
+// }
+// class Two extends One{
+
+//     public static $tester = 'wartosc testera';
+
+//     public static function sprawdzam(){
+//         echo parent::ABC;
+//         echo self::$tester;
+//     }
+// }
+// $a = new Two();
+// echo $a->sprawdzam();
+
+// class Foo{
+
+//     public const BAR = 'BAR';
+//     private const TOLEK = 'Tolek';
+// }
+// echo Foo::BAR;
+// echo Foo::TOLEK;
+
+// const ONE = 1;
+
+// class Test{
+
+//     const TWO = ONE * 2;
+//     const THREE = ONE + self::TWO;
+//     const FOUR = 'Constans FOUR to constns THREE plus 1, czyli: ' . self::THREE + ONE;
+// }
+// $a = Test::FOUR;
+// echo $a;
+
+// class Slonce{
+
+//     const SREDNICA = 12345;
+
+//     public function getSrednica(){
+//         return SELF::SREDNICA;
+//     }
+// }
+// $a = new Slonce();
+// echo "Srednica slonca to: " . $a->getSrednica();
+//echo Slonce::SREDNICA;
+
+
 //structural => adapter
 
 //italian => to => french
 
-class French{
+// class French{
 
-    public function parler(): string
-    {
-        return 'Mowie po francusku'; 
-    }
-}
-class Italian{
-    public function parlare(): string
-    {
-        return "Mowie po wlosku";
-    }
-}
-class Latin extends French{
+//     public function parler(): string
+//     {
+//         return 'Mowie po francusku'; 
+//     }
+// }
+// class Italian{
+//     public function parlare(): string
+//     {
+//         return "Mowie po wlosku";
+//     }
+// }
+// class Latin extends French{
 
-    private $italian;
+//     private $italian;
 
-    public function __construct(Italian $italian){
-        $this->italian = $italian;
-    }
-    public function parler():string
-    {
-        return "PLATFORMA TLUMACZEN: " . $this->italian->parlare() . " ALE zaraz zmienie wloski na francuski";
-    }
-}
-function tlumaczenie(French $french){
-    echo $french->parler();
-}
+//     public function __construct(Italian $italian){
+//         $this->italian = $italian;
+//     }
+//     public function parler():string
+//     {
+//         return "PLATFORMA TLUMACZEN: " . $this->italian->parlare() . " ALE zaraz zmienie wloski na francuski";
+//     }
+// }
+// function tlumaczenie(French $french){
+//     echo $french->parler();
+// }
 
-$francuski = new French();
-$fff = tlumaczenie($francuski) . "<br>";
-echo($fff);
+// $francuski = new French();
+// $fff = tlumaczenie($francuski) . "<br>";
+// echo($fff);
 
-$wloski = new Italian();
-$iii = $wloski->parlare() . "<br>";
-echo($iii);
+// $wloski = new Italian();
+// $iii = $wloski->parlare() . "<br>";
+// echo($iii);
 
-$lacina = new Latin($wloski);
-$platform = tlumaczenie($lacina);
-echo($platform);
+// $lacina = new Latin($wloski);
+// $platform = tlumaczenie($lacina);
+// echo($platform);
 
 // class Rev{
 
