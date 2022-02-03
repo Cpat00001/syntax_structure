@@ -1,5 +1,315 @@
 <?php
 
+abstract class Auto{
+
+    abstract public function intro() : string;
+    abstract public function color();
+}
+class Audi extends Auto{
+
+    private $color;
+    private $model;
+
+    function __construct($model , $color){
+        $this->model = $model;
+        $this->color = $color;
+    }
+
+    public function intro() : string{
+        return "Spoko jest lubie $this->model <br>";
+    }
+public function color(){
+    return $this->model . " has color " . $this->color . "<br>";
+}
+}
+$a = new Audi('A4','blekit');
+echo($a->intro());
+echo $a->color();
+
+
+
+
+// final class Base{
+
+//     public function abc($a){
+//          echo "given parameter is: ". $a;   
+//     }
+// }
+// // class Derived extends Base{ //fatal error cannoc inherit after final 
+// //     public function abc($a){
+// //         echo "given parameter is: ". $a; 
+// //     }
+// // }
+// $a = new Base();
+// echo($a->abc('Raz'));
+
+// class Base{
+
+//     private $name;
+//     private $age;
+
+//     public function __construct($name,$age){
+//         $this->name = $name;
+//         $this->age = $age;
+//     }
+//     public function hello(){
+//         return "Hello my name is: " .$this->name. " and I'm " . $this->age. " old<br>";
+//     }
+// }
+// class Derived extends Base{
+
+//     private $name;
+//     private $age;
+//     private $mood;
+
+//     public function __construct($name,$age,$mood){
+
+//         $this->name = $name;
+//         $this->age = $age;
+//         $this->mood = $mood;
+//     }
+//     public function hello(){
+//         return "Hello my name is: " .$this->name. " and I'm " . $this->age. " old and I'm in ".$this->mood." mood<br>";
+//     }
+// }
+// $a = new Base('Tome',30);
+// echo($a->hello());
+// $b = new Derived('Ola', 25, 'happy');
+// echo($b->hello());
+
+// class Fruit{
+//     private $name;
+//     private $color;
+    
+//     function __construct($name,$color){
+//         $this->name = $name;
+//         $this->color = $color;
+//     }
+//     protected function msg(){
+//       return   "This is " . $this->name . " and has a color " . $this->color." That's it<br> ";
+//     }
+    
+// }
+// class Pear extends Fruit{
+
+//     public function show(){
+//         echo 'Czy jestem gruszka czy owocem?<br>';
+//         echo "call protected method from Base class<br>";
+//         echo $this->msg();
+//     }
+
+//     // public function __toString(){}
+// }
+// $a = new Fruit('Gruszka', 'zolta');
+// //echo($a->msg());//error
+// $b = new Pear('Grunia','zielona');
+// echo($b->show());
+//echo($b->msg());//error
+
+
+
+// class Base{
+
+//     function __construct(){
+//         echo 'Text from BASE class<br>';
+//     }
+// }
+// class Derived extends Base{
+
+//     function __construct(){
+//         $this->aaa = parent:: __construct();
+//         $this->bbb = 'Here is a TEXT from DERIVED';
+//     }
+
+//     function __toString(){
+//         return $this->aaa . ' ' . $this->bbb;
+//     }
+// }
+// $a = new Derived();
+// echo($a);
+
+// class Cat{};
+// class Dog{};
+// class Horse{};
+
+// $objects = [ new Cat(), new Dog() , new Horse(),
+// new Cat(), new Dog(), new Horse(),new Cat(), new Dog(), new Horse()];
+
+// shuffle($objects);
+
+// foreach($objects as $object){
+
+//     if($object instanceof Cat){
+//         echo 'This is a Cat <br>';
+//     }elseif($object instanceof Dog){
+//         echo 'This is a Dog <br>';
+//     }else{
+//         echo 'This is a Horse <br>';
+//     }
+//     // print_r($object);
+//     // echo "<br>";
+// }
+    //if($object instanceof Cat){};
+
+
+// class One{
+
+//     const NAME = 'Olek';
+
+//     public function printer(){
+//         echo self::NAME;
+//     }
+// }
+// $a = new One();
+// echo($a->printer());
+// echo "<br>";
+// echo(One::NAME);
+
+// class One{
+
+//     private $name;
+//     private $age;
+
+//     function __construct($name , $age){
+
+//         $this->name = $name;
+//         $this->age = $age;
+//     }
+//     public function info(){
+//         echo $this->name . " is " . $this->age . " old";
+//     }
+// }
+// $a = new One('Tom' , 34);
+// $b = $a->info();
+// echo $b;
+
+// class One{
+
+//     function __construct($a){
+//         $this->a = $a;
+//     }
+//     public function __toString(){
+//         return "Given parameter is: " . $this->a;
+//     }
+// }
+// $a = new One('Parametr 1');
+// echo $a;
+
+
+// class Rodzic{
+
+//     private function get_date(){
+//         return date("Y/m/d");
+//     }
+//     private function get_version(){
+//         return phpversion();
+//     }
+//     public function show(){
+
+//         $date = $this->get_date();
+//         $version = $this->get_version();
+
+//         return "Dzis jest: " . $date . " i mamy php wersje " . $version;
+//     }
+// }
+// $a = new Rodzic();
+// // $b = $a->get_date(); // error
+// $c = $a->show();
+// echo $c;
+
+// class Person{
+
+//     public $name = 'John';
+//     protected $surname = 'Doe';
+//     private $age = 27; //no access from child class
+// }
+// class Worker extends Person{
+
+//     public function show(){
+//         $this->name;
+//         $this->surname;
+//         $this->age;
+
+//         echo " First name: ".$this->name;
+//         echo "</br>";
+//         echo "Second name: " . $this->surname;
+//         echo "Age: " . $this->age; // causes an error
+//     }
+// }
+// $a = new Worker();
+// $a->show();
+
+// class One{
+
+//     public function setName($name){
+//         $this->name = $name;
+//     }
+
+//     private function getName(){
+//         return '<h1>' . $this->name . '</h1>';
+//     }
+// }
+// $a = new One();
+// $a->setName('John Doe');
+// $b = $a->getName(); //not accessible private function
+// echo $b; 
+
+//final 
+
+// class A{
+//     final public const PI = 3.14;
+// }
+// class B extends A{
+//     public const PI = 3.1415;
+// }
+// $a = new B();
+// echo($a::PI); //Fatal error: Cannot use 'final' as constant modifier 
+// class Baza{
+
+//     final function abc($a){
+//         echo "Welcome to my " . $a;
+//     }
+// }
+
+// // $a = new Baza();
+// // echo($a->abc('home'));
+// class SubBaza extends Baza{
+
+//     public function abc($a){
+//         echo "you cannot extend " . $a . " function";
+//     }
+// }
+// $a = new SubBaza();
+// echo($a->abc('final')); //cannot override final method Baza
+
+// final class Baza{
+
+//     public function abc(){
+//         echo "just text";
+//     }
+// }
+// class SubBaza extends Baza{
+//     public function abc(){
+//         echo "you cannot extend final class -> get an error";
+//     }
+// }
+// $a = new Baza();
+// echo($a->abc()); //an error
+
+// class One{
+//     final function abc(){
+//         echo "just string of text from class One";
+//     }
+// }
+// class Two extends One{
+
+//     function abc(){
+//         echo "you cannot extend final function";
+//     }
+// }
+// $a = new Two();
+// echo($a->abc()); //gives an error
+
 //traits
 // class One{
 
@@ -231,7 +541,7 @@
 // class One extends abc{
 
 //     protected function getValue(){
-//         return 'Class One</br>';
+//         return 'Class One</;>';
 //     }
 //     public function prefix($prefix){
 //         return "{$prefix} Class One<br>";
