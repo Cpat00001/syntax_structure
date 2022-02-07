@@ -1,43 +1,84 @@
 <?php
 
-abstract class Auto{
+//MVC strategy
 
-    abstract public function intro() : string;
+//argument as reference
+function a(&$val, &$b): float
+{
+    $a = $val + $b;
+    return $a;
+}
+$x = 2.555;
+$y = 1.111;
+var_dump(a($x, $y));
+echo "<br>";
+
+//type declaration
+function add(float $a, float $b): float
+{
+    $c = $a + $b;
+    return $c;
+}
+var_dump(add(3, 3.08));
+echo "<br>";
+
+function multi(int $a, int $b): int
+{
+    $c = $a + $b;
+    return $c;
+}
+var_dump(multi(3, 2));
+echo "<br>";
+
+function suma(float $a, float $b): float
+{
+
+    $z = $a + $b;
+    return $z;
+}
+var_dump(suma(3.14, 3.14));
+echo "<br>";
+
+abstract class Auto
+{
+
+    abstract public function intro(): string;
     abstract public function color();
 }
-class Audi extends Auto{
+class Audi extends Auto
+{
 
     private $color;
     private $model;
 
-    function __construct($model , $color){
+    public function __construct($model, $color)
+    {
         $this->model = $model;
         $this->color = $color;
     }
 
-    public function intro() : string{
+    public function intro(): string
+    {
         return "Spoko jest lubie $this->model <br>";
     }
-public function color(){
-    return $this->model . " has color " . $this->color . "<br>";
+    public function color()
+    {
+        return $this->model . " has color " . $this->color . "<br>";
+    }
 }
-}
-$a = new Audi('A4','blekit');
-echo($a->intro());
+$a = new Audi('A4', 'blekit');
+echo ($a->intro());
 echo $a->color();
-
-
-
 
 // final class Base{
 
 //     public function abc($a){
-//          echo "given parameter is: ". $a;   
+//          echo "given parameter is: ". $a;
 //     }
 // }
-// // class Derived extends Base{ //fatal error cannoc inherit after final 
+// // class Derived extends Base{ //fatal error cannoc inherit after final
 // //     public function abc($a){
-// //         echo "given parameter is: ". $a; 
+// //         echo "given parameter is: ". $a;
 // //     }
 // // }
 // $a = new Base();
@@ -80,7 +121,7 @@ echo $a->color();
 // class Fruit{
 //     private $name;
 //     private $color;
-    
+
 //     function __construct($name,$color){
 //         $this->name = $name;
 //         $this->color = $color;
@@ -88,7 +129,7 @@ echo $a->color();
 //     protected function msg(){
 //       return   "This is " . $this->name . " and has a color " . $this->color." That's it<br> ";
 //     }
-    
+
 // }
 // class Pear extends Fruit{
 
@@ -105,8 +146,6 @@ echo $a->color();
 // $b = new Pear('Grunia','zielona');
 // echo($b->show());
 //echo($b->msg());//error
-
-
 
 // class Base{
 
@@ -149,8 +188,7 @@ echo $a->color();
 //     // print_r($object);
 //     // echo "<br>";
 // }
-    //if($object instanceof Cat){};
-
+//if($object instanceof Cat){};
 
 // class One{
 
@@ -195,7 +233,6 @@ echo $a->color();
 // $a = new One('Parametr 1');
 // echo $a;
 
-
 // class Rodzic{
 
 //     private function get_date(){
@@ -231,7 +268,7 @@ echo $a->color();
 //         $this->age;
 
 //         echo " First name: ".$this->name;
-//         echo "</br>";
+//         echo "</;>";
 //         echo "Second name: " . $this->surname;
 //         echo "Age: " . $this->age; // causes an error
 //     }
@@ -252,9 +289,9 @@ echo $a->color();
 // $a = new One();
 // $a->setName('John Doe');
 // $b = $a->getName(); //not accessible private function
-// echo $b; 
+// echo $b;
 
-//final 
+//final
 
 // class A{
 //     final public const PI = 3.14;
@@ -263,7 +300,7 @@ echo $a->color();
 //     public const PI = 3.1415;
 // }
 // $a = new B();
-// echo($a::PI); //Fatal error: Cannot use 'final' as constant modifier 
+// echo($a::PI); //Fatal error: Cannot use 'final' as constant modifier
 // class Baza{
 
 //     final function abc($a){
@@ -430,7 +467,6 @@ echo $a->color();
 // echo "Srednica slonca to: " . $a->getSrednica();
 //echo Slonce::SREDNICA;
 
-
 //structural => adapter
 
 //italian => to => french
@@ -439,7 +475,7 @@ echo $a->color();
 
 //     public function parler(): string
 //     {
-//         return 'Mowie po francusku'; 
+//         return 'Mowie po francusku';
 //     }
 // }
 // class Italian{
@@ -486,7 +522,7 @@ echo $a->color();
 //     }
 // }
 // $a = new Rev('Jesli czytasz ten tekst to znaczy poprawnie,ze ADAPTER zadzialal');
-// $b = $a->convert(); 
+// $b = $a->convert();
 // echo $b;
 
 // abstract
@@ -525,8 +561,6 @@ echo $a->color();
 
 // $b = new sevenZero;
 // print_r($b->material('Wood'));
-
-
 
 // abstract class abc{
 
@@ -579,7 +613,6 @@ echo $a->color();
 // }
 // $b = aaa(3);
 // echo($b);
-    
 
 //static variable + recursive function
 // function foo(){
@@ -638,7 +671,7 @@ echo $a->color();
 // function test(){
 
 //     global $a , $b;
-//     return $a + $b; 
+//     return $a + $b;
 // }
 // $c = test();
 // print_r($c); //outputs 3 as sum of global $a,$b used in function
@@ -688,7 +721,7 @@ echo $a->color();
 // set_error_handler("error_handler");
 
 // function ZeroDiv($a,$b){
-        
+
 //     $c = $a/$b;
 //     echo 'Result: ' . $c;
 // }
@@ -699,7 +732,6 @@ echo $a->color();
 //     echo 'Blad wystapił:';
 //     echo $e->getMessage();
 // }
-
 
 //printing expression ONLY PHP 8.0 && above
 // class SpecException extends Exception{};
@@ -749,8 +781,7 @@ echo $a->color();
 //     }
 // }
 // $a = new abc();
-// $a->tester(); 
-
+// $a->tester();
 
 //nested exception
 // class TestException extends Exception{};
@@ -808,7 +839,6 @@ echo $a->color();
 // $a->cn(5);
 //var_dump($a);
 
-
 //interfacec
 
 // interface Door{
@@ -842,8 +872,6 @@ echo $a->color();
 
 // echo  $h->material() . "<br>" . $h->color() . "<br>" .$h->size(). "<br>" . $h->electric();
 
-
-
 //abstract class
 // abstract class Furniture{
 
@@ -855,7 +883,7 @@ echo $a->color();
 //     public function item($material , $currency = '$$'){
 
 //         if($material == 'wood'){
-//             $price = 100; 
+//             $price = 100;
 //         }elseif($material == 'playwood'){
 //             $price = 50;
 //         }else{
@@ -866,7 +894,6 @@ echo $a->color();
 // }
 // $a = new Chair();
 // echo $a->item('plastic');
-
 
 // abstract class Build{
 
@@ -890,11 +917,6 @@ echo $a->color();
 // }
 // $a = new House(5,5,5);
 // echo "To build new house you need " . $a->constructionSite() . "meters of materials(wood and concrete)";
-
-
-
-
-
 
 // abstract class Property{
 
@@ -926,9 +948,6 @@ echo $a->color();
 // $s = new SmallHouse('small', 4);
 // echo $s->shortDesc('small', 4);
 
-
-
-
 // abstract class Hello{
 
 //     public $name;
@@ -954,8 +973,6 @@ echo $a->color();
 
 // $pol = new Polski('Witaj');
 // echo $pol->welcome();
-
-
 
 // class Base{
 
@@ -983,7 +1000,7 @@ echo $a->color();
 //     }
 // }
 // class SubBase extends Base{
-    
+
 //     function __construct(){
 //         parent:: __construct();
 //         echo "Hello from SubClass";
