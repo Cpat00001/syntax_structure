@@ -27,20 +27,20 @@ class Waluta{
     }
 }
 // sprawdz czy symbol waluty jest poprawny
-try{ 
-   $a = new Waluta('USD');
-    echo('Symbol waluty poprawny');
- }catch(Exception $ex){
-     $msg = $ex->getMessage();
-     echo($msg);
- }
- echo "<br>";
- $sx = $a->isoSymbol();
- var_dump($sx);
+// try{ 
+//    $a = new Waluta('USD');
+//     echo('Symbol waluty poprawny');
+//  }catch(Exception $ex){
+//      $msg = $ex->getMessage();
+//      echo($msg);
+//  }
+//  echo "<br>";
+//  $sx = $a->isoSymbol();
+//  var_dump($sx);
 
- echo('<br>Sprawdz czy symbole walut sa sobie rowne<br>');
- $w1 = new Waluta('USD');
- var_dump($w1->rownoscSymboliWalut(new Waluta('USD')));
+//  echo('<br>Sprawdz czy symbole walut sa sobie rowne<br>');
+//  $w1 = new Waluta('USD');
+//  var_dump($w1->rownoscSymboliWalut(new Waluta('USD')));
 
 //classa Kwota
 class Kwota{
