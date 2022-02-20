@@ -40,7 +40,7 @@ try{
 
  echo('<br>Sprawdz czy symbole walut sa sobie rowne<br>');
  $w1 = new Waluta('USD');
- var_dump($w1->rownoscSymboliWalut(new Waluta('EUR')));
+ var_dump($w1->rownoscSymboliWalut(new Waluta('USD')));
 
 //classa Kwota
 class Kwota{
@@ -81,13 +81,51 @@ class Kwota{
         return new self(0 , $aWaluta);
     }
     // dodawanie 
-    public function zwiekszKwote($dodatkowaKwota)
+    // public function zwiekszKwote($dodatkowaKwota)
+    public function zwiekszKwote(Kwota $kwota)
     {
-        return new self(
-            $this->kwota + $dodatkowaKwota,
-            $this->waluta()
-        );
+        echo "<br>pokaz walute this => waluta <br>";
+        var_dump($this->waluta());
+        echo "<br>pokaz walute this => kwota <br>";
+        var_dump($kwota->waluta());
+        //zrob porowanie walut dodawanych kwot
+        if($this->waluta != $kwota->waluta()){
+             echo "Sumowanie kwot niewykonalne -> chcesz dodac dwie rozne waluty";
+            }else{
+                echo "Sumowanie kwot w tej samej walucie -> sumowanie";
+                return new self(
+                    $this->kwota + $kwota->kwota(),
+                    $this->waluta()
+                );
+            }
     }
+    //odejmowanie
+    public function zmniejszKwote(Kwota $kwota)
+    {
+            //zrob porowanie walut dodawanych kwot
+                if($this->waluta != $kwota->waluta()){
+                    echo "Odjemowanie kwot niewykonalne -> chcesz odjac dwie rozne waluty";
+                   }else{
+                       echo "Odejmowanie kwot w tej samej walucie -> odejmowanie";
+                       return new self(
+                           $this->kwota - $kwota->kwota(),
+                           $this->waluta()
+                       );
+                   }
+    }
+    //mnozenie
+    public function mnozenie($iloczyn)
+    {
+        echo "<br>Pokaz iloczyn: </br>" . $iloczyn;
+        return $this->kwota * $iloczyn;
+    }
+    // dzielenie
+    public function dzielenie($iloraz)
+    {
+        echo "<br>Pokaz iloraz: </br>" . $iloraz;
+        return $this->kwota/$iloraz;
+    } 
+
     //sprawdz czy Kwata i symbol Waluty sa sobie rowne
     public function rownoscKwotyWaluty(Kwota $kwota)
     {
@@ -97,56 +135,34 @@ class Kwota{
 }
 
 $k = new Kwota(111,new Waluta('PLN'));
-echo"<br>";
+echo"<br>Implementacja klasy: <br>";
 var_dump($k);
+// $dodac = $k->zwiekszKwote(new Kwota(111 , new Waluta('EUR')));
+// var_dump($dodac);
+echo "<br>Odejmij kwoty<br>";
+$odjac = $k->zmniejszKwote(new Kwota(100 , new Waluta('PLN')));
+var_dump($odjac);
 
-echo('<br>porownanie dwoch kwot <br>');
-$kk = new Kwota(100 , new Waluta('EUR'));
-$nowaKK = $kk->zwiekszKwote(100);
-var_dump($kk === $nowaKK);
+$mnoznik = $k->mnozenie(3);
+echo"<br><br>";
+var_dump($mnoznik);
+echo"<br><br>";
+$dzielnik = $k->dzielenie(2);
+var_dump($dzielnik);
+
+
+// echo('<br>porownanie dwoch kwot <br>');
+// $kk = new Kwota(100 , new Waluta('EUR'));
+// $nowaKK = $kk->zwiekszKwote(100);
 
 $kwota = new Kwota(50 , new Waluta('PLN'));
-var_dump($kwota->rownoscKwotyWaluty(new Kwota(50, 'PLN')));
+echo('Porownanie rownoscKwotyWaluty: ');
+var_dump($kwota->rownoscKwotyWaluty(new Kwota(50, new Waluta('PLN'))));
 
-// final class Money {
 
-//     private $ilosc;
-//     private $waluta;
 
-//     public function __construct(float $ilosc , string $waluta){
 
-//         $this->ilosc = $ilosc;
-//         $this->waluta = $waluta;
-//     }
-//     //ustaw wlasciwa walute
-//     public function formatujSymbolWaluty()
-//     {   
-//         $ilosc = $this->ilosc;
-//         return number_format($ilosc , 2, ' , ' , ' . ') + ' ' + $this->waluta;
-//     }
 
-//     public function dodawanie($skladnikDwa){
-
-//         $wynikDodawania = $this->ilosc + $skladnikDwa;
-//         return $wynikDodawania;
-//     }
-// }
-// final class DSR extends Money{
-
-//     public $wartoscPoczatkowa;
-
-//   public function FIPG( Money $wartoscPoczatkowa){
-
-//     $wartoscPoczatkowa->dodawanie(10);
-//     return $wartoscPoczatkowa->formatujSymbolWaluty();
-//   }
-//   public function __toString()
-//   {
-//       return $this->$wartoscPoczatkowa;
-//   }
-// }
-// $a = new DSR(10, "PLN" , 10);
-// echo($a);
 
 
 
