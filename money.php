@@ -134,30 +134,30 @@ class Kwota{
     }
 }
 
-$k = new Kwota(111,new Waluta('PLN'));
-echo"<br>Implementacja klasy: <br>";
-var_dump($k);
+// $k = new Kwota(111,new Waluta('PLN'));
+// echo"<br>Implementacja klasy: <br>";
+// var_dump($k);
 // $dodac = $k->zwiekszKwote(new Kwota(111 , new Waluta('EUR')));
 // var_dump($dodac);
-echo "<br>Odejmij kwoty<br>";
-$odjac = $k->zmniejszKwote(new Kwota(100 , new Waluta('PLN')));
-var_dump($odjac);
+// echo "<br>Odejmij kwoty<br>";
+// $odjac = $k->zmniejszKwote(new Kwota(100 , new Waluta('PLN')));
+// var_dump($odjac);
 
-$mnoznik = $k->mnozenie(3);
-echo"<br><br>";
-var_dump($mnoznik);
-echo"<br><br>";
-$dzielnik = $k->dzielenie(2);
-var_dump($dzielnik);
+// $mnoznik = $k->mnozenie(3);
+// echo"<br><br>";
+// var_dump($mnoznik);
+// echo"<br><br>";
+// $dzielnik = $k->dzielenie(2);
+// var_dump($dzielnik);
 
 
 // echo('<br>porownanie dwoch kwot <br>');
 // $kk = new Kwota(100 , new Waluta('EUR'));
 // $nowaKK = $kk->zwiekszKwote(100);
 
-$kwota = new Kwota(50 , new Waluta('PLN'));
-echo('Porownanie rownoscKwotyWaluty: ');
-var_dump($kwota->rownoscKwotyWaluty(new Kwota(50, new Waluta('PLN'))));
+// $kwota = new Kwota(50 , new Waluta('PLN'));
+// echo('Porownanie rownoscKwotyWaluty: ');
+// var_dump($kwota->rownoscKwotyWaluty(new Kwota(50, new Waluta('PLN'))));
 
 
 
