@@ -84,10 +84,6 @@ class Kwota{
     // public function zwiekszKwote($dodatkowaKwota)
     public function zwiekszKwote(Kwota $kwota)
     {
-        echo "<br>pokaz walute this => waluta <br>";
-        var_dump($this->waluta());
-        echo "<br>pokaz walute this => kwota <br>";
-        var_dump($kwota->waluta());
         //zrob porowanie walut dodawanych kwot
         if($this->waluta != $kwota->waluta()){
              echo "Sumowanie kwot niewykonalne -> chcesz dodac dwie rozne waluty";
@@ -134,30 +130,22 @@ class Kwota{
     }
 }
 
-// $k = new Kwota(111,new Waluta('PLN'));
-// echo"<br>Implementacja klasy: <br>";
-// var_dump($k);
-// $dodac = $k->zwiekszKwote(new Kwota(111 , new Waluta('EUR')));
-// var_dump($dodac);
-// echo "<br>Odejmij kwoty<br>";
-// $odjac = $k->zmniejszKwote(new Kwota(100 , new Waluta('PLN')));
-// var_dump($odjac);
+// $a = new Kwota(50,new Waluta('EUR'));
+// var_dump($a);
+// echo "<br><br>";
+// $d = $a->zwiekszKwote(new Kwota(50, new Waluta('EUR')));
+// echo "<br><br>";
+// var_dump($d);
+// $od = $a->zmniejszKwote(new Kwota(10 , new Waluta('EUR')));
+// var_dump($od);
 
-// $mnoznik = $k->mnozenie(3);
+// $mnoznik = $a->mnozenie(3);
 // echo"<br><br>";
 // var_dump($mnoznik);
 // echo"<br><br>";
-// $dzielnik = $k->dzielenie(2);
+// $dzielnik = $a->dzielenie(2);
 // var_dump($dzielnik);
 
-
-// echo('<br>porownanie dwoch kwot <br>');
-// $kk = new Kwota(100 , new Waluta('EUR'));
-// $nowaKK = $kk->zwiekszKwote(100);
-
-// $kwota = new Kwota(50 , new Waluta('PLN'));
-// echo('Porownanie rownoscKwotyWaluty: ');
-// var_dump($kwota->rownoscKwotyWaluty(new Kwota(50, new Waluta('PLN'))));
 
 
 
